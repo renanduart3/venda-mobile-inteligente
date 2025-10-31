@@ -1,0 +1,20 @@
+title: Venda Mobile Inteligente
+description: Aplicativo inteligente para gerenciamento de vendas mobile
+theme: jekyll-theme-cayman
+baseurl: ""
+url: "https://renanduart3.github.io"
+
+# Social links
+github_username: renanduart3
+repository: renanduart3/venda-mobile-inteligente
+
+# Build settings
+markdown: kramdown
+plugins:
+  - jekyll-seo-tag
+
+# Exclude from processing
+exclude:
+  - README.md
+  - .git
+  - .gitignore
