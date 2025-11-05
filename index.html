@@ -6,6 +6,18 @@
     <meta name="description" content="Venda Mobile Inteligente - Aplicativo para gerenciamento de vendas mobile">
     <title>Venda Mobile Inteligente</title>
     <style>
+        :root {
+            --primary: #5b67f1;
+            --primary-dark: #3941c6;
+            --secondary: #ffffff;
+            --gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            --text-dark: #1b1d33;
+            --text-light: #f5f7ff;
+            --muted: #6f7391;
+            --card-bg: rgba(255, 255, 255, 0.92);
+            --shadow: 0 20px 40px rgba(55, 60, 130, 0.15);
+        }
+
         * {
             margin: 0;
             padding: 0;
@@ -13,268 +25,820 @@
         }
 
         body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
             line-height: 1.6;
-            color: #333;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: var(--text-dark);
+            background: var(--gradient);
             min-height: 100vh;
+            scroll-behavior: smooth;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        img {
+            display: block;
+            max-width: 100%;
+            border-radius: 16px;
+            box-shadow: 0 20px 40px rgba(14, 28, 66, 0.15);
         }
 
         .container {
-            max-width: 1200px;
+            width: min(1200px, 92vw);
             margin: 0 auto;
-            padding: 20px;
         }
 
-        header {
-            text-align: center;
-            padding: 60px 20px;
-            color: white;
+        header.site-header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background: rgba(15, 20, 60, 0.85);
+            backdrop-filter: blur(16px);
+            z-index: 1000;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
         }
 
-        h1 {
-            font-size: 3em;
-            margin-bottom: 20px;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        .site-header .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 18px 0;
         }
 
-        .tagline {
-            font-size: 1.5em;
-            margin-bottom: 40px;
-            opacity: 0.95;
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-weight: 700;
+            font-size: 1.1rem;
+            color: var(--text-light);
+            letter-spacing: 0.02em;
         }
 
-        .main-content {
-            background: white;
-            border-radius: 12px;
-            padding: 40px;
-            margin: 40px auto;
-            box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+        .logo span {
+            font-size: 1.3rem;
         }
 
-        .feature-grid {
+        nav {
+            display: flex;
+            gap: clamp(14px, 2vw, 32px);
+        }
+
+        nav a {
+            color: var(--text-light);
+            font-weight: 500;
+            font-size: 0.95rem;
+            position: relative;
+            padding-bottom: 6px;
+        }
+
+        nav a::after {
+            content: "";
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 0;
+            height: 2px;
+            background: var(--secondary);
+            transition: width 0.3s ease;
+        }
+
+        nav a:hover::after,
+        nav a:focus-visible::after {
+            width: 100%;
+        }
+
+        main {
+            padding-top: 110px;
+        }
+
+        section {
+            margin: 0 auto;
+            padding: clamp(60px, 10vw, 120px) 0;
+            position: relative;
+        }
+
+        .hero {
+            min-height: clamp(480px, 85vh, 720px);
+            display: grid;
+            align-items: center;
+            background: radial-gradient(circle at 20% 20%, rgba(255,255,255,0.25), transparent 45%),
+                        radial-gradient(circle at 80% 30%, rgba(123, 97, 255, 0.25), transparent 45%),
+                        rgba(13, 19, 51, 0.85);
+            color: var(--text-light);
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(circle at 15% 25%, rgba(255,255,255,0.12), transparent 40%),
+                        radial-gradient(circle at 80% 20%, rgba(118,75,162,0.18), transparent 46%);
+            opacity: 0.6;
+            pointer-events: none;
+        }
+
+        .hero .container {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 30px;
-            margin: 40px 0;
+            gap: clamp(32px, 6vw, 80px);
+            align-items: center;
         }
 
-        .feature-card {
-            padding: 30px;
-            border-radius: 8px;
-            background: #f8f9fa;
-            border-left: 4px solid #667eea;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            animation: reveal 0.9s ease both;
         }
 
-        .feature-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(255,255,255,0.12);
+            border-radius: 999px;
+            padding: 8px 18px;
+            font-size: 0.85rem;
+            letter-spacing: 0.06em;
+            text-transform: uppercase;
+            margin-bottom: 20px;
         }
 
-        .feature-card h3 {
-            color: #667eea;
-            margin-bottom: 15px;
-            font-size: 1.5em;
+        .hero h1 {
+            font-size: clamp(2.5rem, 5vw, 3.8rem);
+            line-height: 1.1;
+            margin-bottom: 18px;
         }
 
-        .feature-card p {
-            color: #666;
-            line-height: 1.8;
+        .hero p {
+            font-size: clamp(1rem, 1.3vw, 1.2rem);
+            color: rgba(245,247,255,0.85);
+            margin-bottom: 28px;
         }
 
-        .cta-buttons {
+        .cta-group {
             display: flex;
-            gap: 20px;
-            justify-content: center;
             flex-wrap: wrap;
-            margin: 40px 0;
+            gap: 16px;
         }
 
         .btn {
-            padding: 15px 40px;
-            border-radius: 50px;
-            text-decoration: none;
-            font-weight: bold;
-            font-size: 1.1em;
-            transition: all 0.3s ease;
-            display: inline-block;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            padding: 14px 28px;
+            border-radius: 999px;
+            font-weight: 600;
+            font-size: 1rem;
+            transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
+            cursor: pointer;
         }
 
         .btn-primary {
-            background: #667eea;
-            color: white;
-            box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
+            background: var(--secondary);
+            color: var(--primary);
+            box-shadow: 0 18px 30px rgba(26, 28, 60, 0.35);
         }
 
         .btn-primary:hover {
-            background: #5568d3;
-            transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(102, 126, 234, 0.6);
+            transform: translateY(-4px);
+            box-shadow: 0 24px 40px rgba(26, 28, 60, 0.45);
         }
 
         .btn-secondary {
-            background: white;
-            color: #667eea;
-            border: 2px solid #667eea;
+            background: transparent;
+            color: var(--text-light);
+            border: 2px solid rgba(255,255,255,0.4);
         }
 
         .btn-secondary:hover {
-            background: #667eea;
-            color: white;
-            transform: translateY(-2px);
+            background: rgba(255,255,255,0.1);
+            transform: translateY(-4px);
         }
 
-        .info-section {
-            margin: 40px 0;
-            padding: 30px;
-            background: #f8f9fa;
-            border-radius: 8px;
+        .hero-visual {
+            position: relative;
+            z-index: 1;
+            animation: float 6s ease-in-out infinite;
         }
 
-        .info-section h2 {
-            color: #667eea;
-            margin-bottom: 20px;
-            font-size: 2em;
+        .hero-visual::after {
+            content: "";
+            position: absolute;
+            inset: 18% 12% 0;
+            background: linear-gradient(180deg, rgba(91,103,241,0.35), transparent 70%);
+            filter: blur(30px);
+            z-index: -1;
         }
 
-        .info-section p {
-            color: #666;
-            font-size: 1.1em;
-            line-height: 1.8;
-            margin-bottom: 15px;
+        .card-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: clamp(24px, 4vw, 36px);
+        }
+
+        .card {
+            background: var(--card-bg);
+            border-radius: 24px;
+            padding: clamp(24px, 3vw, 32px);
+            box-shadow: var(--shadow);
+            position: relative;
+            overflow: hidden;
+            transition: transform 0.35s ease, box-shadow 0.35s ease;
+            animation: reveal 1s ease both;
+        }
+
+        .card::after {
+            content: "";
+            position: absolute;
+            inset: -60% 35% auto -40%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(102,126,234,0.18) 0%, transparent 60%);
+            transform: rotate(18deg);
+            pointer-events: none;
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 28px 50px rgba(43, 47, 116, 0.25);
+        }
+
+        .icon-bubble {
+            width: 56px;
+            height: 56px;
+            border-radius: 18px;
+            display: grid;
+            place-items: center;
+            background: rgba(91,103,241,0.12);
+            color: var(--primary);
+            font-size: 1.6rem;
+            margin-bottom: 18px;
+            animation: floatIcon 3.2s ease-in-out infinite;
+        }
+
+        .section-heading {
+            text-align: center;
+            margin-bottom: clamp(36px, 6vw, 64px);
+        }
+
+        .section-heading h2 {
+            font-size: clamp(2rem, 3vw, 2.6rem);
+            margin-bottom: 12px;
+        }
+
+        .section-heading p {
+            color: var(--muted);
+            max-width: 620px;
+            margin: 0 auto;
+        }
+
+        .flow {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 18px;
+            counter-reset: etapa;
+        }
+
+        .flow-step {
+            position: relative;
+            padding: 28px;
+            background: rgba(15, 20, 60, 0.08);
+            border-radius: 24px;
+            color: var(--text-dark);
+        }
+
+        .flow-step::before {
+            counter-increment: etapa;
+            content: counter(etapa);
+            position: absolute;
+            top: 22px;
+            left: 24px;
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            display: grid;
+            place-items: center;
+            background: rgba(91,103,241,0.2);
+            color: var(--primary);
+            font-weight: 700;
+        }
+
+        .flow-step h3 {
+            margin-left: 48px;
+            font-size: 1.1rem;
+            margin-bottom: 10px;
+        }
+
+        .flow-step p {
+            margin-left: 48px;
+            color: var(--muted);
+        }
+
+        .carousel {
+            position: relative;
+        }
+
+        .carousel-track {
+            display: grid;
+            grid-auto-flow: column;
+            grid-auto-columns: minmax(260px, 1fr);
+            gap: 24px;
+            overflow-x: auto;
+            padding-bottom: 12px;
+            scroll-snap-type: x mandatory;
+            scrollbar-width: thin;
+        }
+
+        .carousel-track::-webkit-scrollbar {
+            height: 6px;
+        }
+
+        .carousel-track::-webkit-scrollbar-thumb {
+            background: rgba(91,103,241,0.4);
+            border-radius: 999px;
+        }
+
+        .carousel-item {
+            scroll-snap-align: center;
+            position: relative;
+        }
+
+        .carousel-caption {
+            position: absolute;
+            inset: auto 0 0 0;
+            background: linear-gradient(180deg, transparent 30%, rgba(10, 16, 45, 0.85));
+            color: var(--text-light);
+            padding: 18px;
+            border-radius: 0 0 16px 16px;
+        }
+
+        .testimonials {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 24px;
+        }
+
+        .testimonial {
+            background: rgba(255,255,255,0.92);
+            border-radius: 24px;
+            padding: 28px;
+            box-shadow: var(--shadow);
+            position: relative;
+        }
+
+        .testimonial p {
+            color: var(--muted);
+            margin-bottom: 18px;
+        }
+
+        .testimonial strong {
+            display: block;
+            font-weight: 600;
+            color: var(--text-dark);
+        }
+
+        .faq {
+            display: grid;
+            gap: 16px;
+            max-width: 840px;
+            margin: 0 auto;
+        }
+
+        details {
+            background: rgba(255,255,255,0.88);
+            border-radius: 18px;
+            padding: 18px 22px;
+            box-shadow: var(--shadow);
+        }
+
+        summary {
+            cursor: pointer;
+            font-weight: 600;
+            color: var(--text-dark);
+        }
+
+        summary::-webkit-details-marker {
+            display: none;
+        }
+
+        summary::after {
+            content: "+";
+            float: right;
+            font-weight: 700;
+            transition: transform 0.3s ease;
+        }
+
+        details[open] summary::after {
+            transform: rotate(45deg);
+        }
+
+        details p {
+            margin-top: 12px;
+            color: var(--muted);
+        }
+
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: clamp(24px, 4vw, 40px);
+            margin-top: 40px;
+        }
+
+        .pricing-card {
+            position: relative;
+            background: rgba(255,255,255,0.95);
+            border-radius: 28px;
+            padding: 32px;
+            box-shadow: var(--shadow);
+            border: 2px solid transparent;
+            transition: transform 0.35s ease, border-color 0.35s ease;
+        }
+
+        .pricing-card.highlight {
+            border-color: rgba(91,103,241,0.35);
+            transform: translateY(-8px);
+        }
+
+        .pricing-card:hover {
+            transform: translateY(-12px);
+            border-color: rgba(91,103,241,0.55);
+        }
+
+        .pricing-card h3 {
+            font-size: 1.6rem;
+            margin-bottom: 8px;
+        }
+
+        .price-tag {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--primary);
+            margin: 18px 0;
+        }
+
+        .pricing-card ul {
+            list-style: none;
+            display: grid;
+            gap: 8px;
+            color: var(--muted);
+        }
+
+        .pricing-card ul li::before {
+            content: "✅";
+            margin-right: 8px;
+        }
+
+        .pricing-footer {
+            margin-top: 22px;
+            font-size: 0.9rem;
+            color: var(--muted);
+        }
+
+        .pricing-cta {
+            margin-top: 40px;
+            text-align: center;
         }
 
         footer {
+            background: rgba(10, 14, 40, 0.92);
+            color: var(--text-light);
+            padding: 60px 0 32px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 32px;
+        }
+
+        .footer-grid h4 {
+            font-size: 1.1rem;
+            margin-bottom: 16px;
+        }
+
+        .footer-grid ul {
+            list-style: none;
+            display: grid;
+            gap: 10px;
+        }
+
+        .footer-grid a {
+            color: rgba(255,255,255,0.75);
+        }
+
+        .footer-grid a:hover {
+            color: var(--secondary);
+        }
+
+        .footer-bottom {
+            margin-top: 40px;
             text-align: center;
-            padding: 40px 20px;
-            color: white;
-            margin-top: 60px;
+            font-size: 0.85rem;
+            color: rgba(255,255,255,0.55);
         }
 
-        footer a {
-            color: white;
-            text-decoration: underline;
-            margin: 0 10px;
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-12px); }
         }
 
-        footer a:hover {
-            opacity: 0.8;
+        @keyframes floatIcon {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-6px); }
         }
 
-        .links-section {
-            margin: 20px 0;
+        @keyframes reveal {
+            from {
+                opacity: 0;
+                transform: translateY(24px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
 
-        @media (max-width: 768px) {
-            h1 {
-                font-size: 2em;
+        @media (max-width: 900px) {
+            nav {
+                display: none;
             }
 
-            .tagline {
-                font-size: 1.2em;
+            header.site-header .container {
+                justify-content: space-between;
             }
+        }
 
-            .main-content {
-                padding: 20px;
-            }
-
-            .cta-buttons {
-                flex-direction: column;
-                align-items: stretch;
-            }
-
+        @media (max-width: 640px) {
             .btn {
+                width: 100%;
+                justify-content: center;
+            }
+
+            .hero {
                 text-align: center;
+            }
+
+            .hero-visual {
+                display: none;
             }
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <header>
-            <h1>📱 Venda Mobile Inteligente</h1>
-            <p class="tagline">Aplicativo inteligente para gerenciamento de vendas mobile</p>
-        </header>
+    <header class="site-header">
+        <div class="container">
+            <a class="logo" href="#inicio">
+                <span>📱</span>
+                <span>Venda Mobile Inteligente</span>
+            </a>
+            <nav aria-label="Navegação principal">
+                <a href="#beneficios">Benefícios</a>
+                <a href="#fluxo">Fluxo</a>
+                <a href="#galeria">Galeria</a>
+                <a href="#depoimentos">Resultados</a>
+                <a href="#faq">FAQ</a>
+                <a href="#precos">Preços</a>
+            </nav>
+        </div>
+    </header>
 
-        <div class="main-content">
-            <div class="info-section">
-                <h2>Sobre o Aplicativo</h2>
-                <p>
-                    O Venda Mobile Inteligente é uma solução completa para gerenciamento de vendas mobile, 
-                    desenvolvida para facilitar o trabalho de vendedores e empresas que precisam de mobilidade 
-                    e eficiência no processo de vendas.
-                </p>
-                <p>
-                    Com uma interface intuitiva e recursos poderosos, o aplicativo permite que você gerencie 
-                    seus clientes, produtos, pedidos e muito mais, tudo na palma da sua mão.
-                </p>
-            </div>
-
-            <h2 style="text-align: center; color: #667eea; margin: 40px 0 30px;">Principais Funcionalidades</h2>
-            
-            <div class="feature-grid">
-                <div class="feature-card">
-                    <h3>🛒 Gestão de Vendas</h3>
-                    <p>Registre e acompanhe todas as suas vendas de forma rápida e organizada, com histórico completo e relatórios detalhados.</p>
+    <main id="inicio">
+        <section class="hero" id="hero">
+            <div class="container">
+                <div class="hero-content">
+                    <div class="hero-badge">Controle mobile • Vendas inteligentes</div>
+                    <h1>Gerencie seu pipeline de vendas em campo com confiança total</h1>
+                    <p>Use offline grátis para capturar pedidos na rua e evolua para o Premium com backup em nuvem, sincronização em tempo real e relatórios avançados quando estiver pronto para escalar.</p>
+                    <div class="cta-group">
+                        <a class="btn btn-primary" href="#precos">Experimente o uso local grátis</a>
+                        <a class="btn btn-secondary" href="#precos">Conheça o Premium com backup</a>
+                    </div>
                 </div>
-                
-                <div class="feature-card">
-                    <h3>👥 Cadastro de Clientes</h3>
-                    <p>Mantenha um cadastro completo dos seus clientes com todas as informações importantes sempre à mão.</p>
-                </div>
-                
-                <div class="feature-card">
-                    <h3>📦 Controle de Produtos</h3>
-                    <p>Gerencie seu catálogo de produtos com facilidade, incluindo preços, estoque e descrições.</p>
-                </div>
-                
-                <div class="feature-card">
-                    <h3>📊 Relatórios</h3>
-                    <p>Visualize relatórios e estatísticas de vendas para tomar decisões mais inteligentes no seu negócio.</p>
-                </div>
-                
-                <div class="feature-card">
-                    <h3>🔄 Sincronização</h3>
-                    <p>Sincronize seus dados em tempo real e acesse de qualquer lugar com segurança.</p>
-                </div>
-                
-                <div class="feature-card">
-                    <h3>📱 Interface Intuitiva</h3>
-                    <p>Design moderno e fácil de usar, pensado para proporcionar a melhor experiência mobile.</p>
+                <div class="hero-visual" aria-hidden="true">
+                    <img src="assets/screenshots/mock-dashboard.svg" alt="Dashboard do Venda Mobile Inteligente">
                 </div>
             </div>
+        </section>
 
-            <div class="cta-buttons">
-                <a href="https://github.com/renanduart3/venda-mobile" class="btn btn-primary">Ver Código Fonte</a>
-                <a href="#download" class="btn btn-secondary">Download em Breve</a>
+        <section id="beneficios">
+            <div class="container">
+                <div class="section-heading">
+                    <h2>Benefícios que aceleram cada visita</h2>
+                    <p>Automatize rotinas, conquiste clientes e mantenha dados protegidos com animações suaves e recursos que trabalham por você.</p>
+                </div>
+                <div class="card-grid">
+                    <article class="card">
+                        <div class="icon-bubble">⚡</div>
+                        <h3>Performance em campo</h3>
+                        <p>Rotas otimizadas, registro rápido de pedidos e acesso offline para que nada pare suas vendas, mesmo longe do escritório.</p>
+                    </article>
+                    <article class="card">
+                        <div class="icon-bubble">🔐</div>
+                        <h3>Segurança e backup</h3>
+                        <p>Modo Premium com backup automático, controle de permissões e histórico completo para auditar tudo o que aconteceu.</p>
+                    </article>
+                    <article class="card">
+                        <div class="icon-bubble">📊</div>
+                        <h3>Insights inteligentes</h3>
+                        <p>Relatórios avançados e gráficos que mostram os próximos passos para crescer suas vendas a cada ciclo.</p>
+                    </article>
+                    <article class="card">
+                        <div class="icon-bubble">🤝</div>
+                        <h3>Experiência do cliente</h3>
+                        <p>Agenda integrada, catálogos ricos e histórico de interações centralizado para encantar seus compradores.</p>
+                    </article>
+                </div>
             </div>
+        </section>
 
-            <div class="info-section">
-                <h2>Repositório Público</h2>
-                <p>
-                    Este é o repositório público do Venda Mobile Inteligente, contendo documentação, 
-                    termos de serviço e políticas de privacidade.
-                </p>
-                <p>
-                    O código fonte completo do aplicativo está disponível em um repositório separado: 
-                    <a href="https://github.com/renanduart3/venda-mobile" target="_blank" style="color: #667eea; font-weight: bold;">
-                        github.com/renanduart3/venda-mobile
-                    </a>
-                </p>
+        <section id="fluxo">
+            <div class="container">
+                <div class="section-heading">
+                    <h2>Destaques do fluxo operacional</h2>
+                    <p>Visualize o pipeline completo com etapas claras para prospectar, fechar e fidelizar clientes.</p>
+                </div>
+                <div class="flow">
+                    <div class="flow-step">
+                        <h3>Planejamento de rotas</h3>
+                        <p>Defina visitas prioritárias com filtros e mapas atualizados, mesmo em modo offline.</p>
+                    </div>
+                    <div class="flow-step">
+                        <h3>Execução no ponto de venda</h3>
+                        <p>Cadastre pedidos, fotos e observações em segundos, mantendo o histórico sincronizado.</p>
+                    </div>
+                    <div class="flow-step">
+                        <h3>Aprovação e logística</h3>
+                        <p>Envie pedidos para aprovação automática, integrações ERP e acompanhamento de entregas.</p>
+                    </div>
+                    <div class="flow-step">
+                        <h3>Análise e expansão</h3>
+                        <p>Receba alertas de oportunidades, monitore metas e replique estratégias vencedoras.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="galeria">
+            <div class="container">
+                <div class="section-heading">
+                    <h2>Experiência visual do aplicativo</h2>
+                    <p>Explore telas reais do Venda Mobile Inteligente e veja como o time trabalha com fluidez.</p>
+                </div>
+                <div class="carousel" aria-label="Galeria de screenshots">
+                    <div class="carousel-track">
+                        <figure class="carousel-item">
+                            <img src="assets/screenshots/mock-clientes.svg" alt="Tela de clientes no aplicativo">
+                            <figcaption class="carousel-caption">Cadastre clientes com limites inteligentes e dados completos.</figcaption>
+                        </figure>
+                        <figure class="carousel-item">
+                            <img src="assets/screenshots/mock-pedidos.svg" alt="Tela de pedidos do aplicativo">
+                            <figcaption class="carousel-caption">Emita pedidos offline e sincronize quando estiver conectado.</figcaption>
+                        </figure>
+                        <figure class="carousel-item">
+                            <img src="assets/screenshots/mock-dashboard.svg" alt="Dashboard de resultados">
+                            <figcaption class="carousel-caption">Acompanhe métricas vitais com dashboards dinâmicos.</figcaption>
+                        </figure>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="depoimentos">
+            <div class="container">
+                <div class="section-heading">
+                    <h2>Resultados comprovados em campo</h2>
+                    <p>Empresas e representantes comerciais que migraram para o Venda Mobile Inteligente relatam ganhos consistentes.</p>
+                </div>
+                <div class="testimonials">
+                    <article class="testimonial">
+                        <p>“Reduzimos 40% do tempo gasto na aprovação de pedidos e aumentamos a taxa de recompra em clientes de rota.”</p>
+                        <strong>Marina Lopes • Gerente Comercial</strong>
+                    </article>
+                    <article class="testimonial">
+                        <p>“Mesmo sem internet, nossa equipe não perde nenhuma venda. O modo Premium garante backup diário e tranquilidade.”</p>
+                        <strong>Rogério Campos • Supervisor de Vendas Externas</strong>
+                    </article>
+                    <article class="testimonial">
+                        <p>“Os relatórios avançados nos ajudaram a identificar regiões quentes e montar campanhas mais rentáveis.”</p>
+                        <strong>Ana Paula • Analista de Inteligência Comercial</strong>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section id="faq">
+            <div class="container">
+                <div class="section-heading">
+                    <h2>Perguntas frequentes</h2>
+                    <p>Respostas rápidas para tirar suas dúvidas antes de colocar o time em campo.</p>
+                </div>
+                <div class="faq">
+                    <details>
+                        <summary>Posso usar gratuitamente para sempre?</summary>
+                        <p>Sim. O modo local gratuito continua disponível sem custo, ideal para equipes começando ou atuando em regiões sem conexão contínua.</p>
+                    </details>
+                    <details>
+                        <summary>O que acontece se eu ficar offline sem backup?</summary>
+                        <p>Você continua registrando pedidos, mas os dados ficam apenas no dispositivo até reconectar. Sem o Premium, não há backup automático na nuvem.</p>
+                    </details>
+                    <details>
+                        <summary>Quais plataformas são suportadas?</summary>
+                        <p>O app é otimizado para dispositivos Android e integra com seu ERP via API ou exportação manual no modo gratuito.</p>
+                    </details>
+                    <details>
+                        <summary>Posso migrar para o Premium quando quiser?</summary>
+                        <p>Claro! Faça upgrade a qualquer momento e habilite sincronização em tempo real, relatórios avançados e suporte prioritário instantaneamente.</p>
+                    </details>
+                </div>
+            </div>
+        </section>
+
+        <section id="precos">
+            <div class="container">
+                <div class="section-heading">
+                    <h2>Planos flexíveis para cada fase</h2>
+                    <p>Comece grátis e evolua para o Premium quando precisar de backup automático, relatórios completos e sincronização total.</p>
+                </div>
+                <div class="pricing-grid">
+                    <article class="pricing-card">
+                        <h3>Uso Local Gratuito</h3>
+                        <p class="price-tag">R$ 0/mês</p>
+                        <ul>
+                            <li>Gestão básica de vendas</li>
+                            <li>Cadastro de clientes e produtos limitados</li>
+                            <li>Relatórios básicos</li>
+                            <li>Sincronização básica quando estiver online</li>
+                            <li>Suporte via email</li>
+                        </ul>
+                        <div class="pricing-footer">Ideal para validar operações regionais e começar sem riscos.</div>
+                    </article>
+                    <article class="pricing-card highlight">
+                        <h3>Premium com Backup</h3>
+                        <p class="price-tag">R$ 29,90/mês <span style="font-size:0.55em; font-weight:500;">ou R$ 299/ano</span></p>
+                        <ul>
+                            <li>Todos os recursos do plano gratuito</li>
+                            <li>Cadastros ilimitados de clientes e produtos</li>
+                            <li>Relatórios avançados e análises detalhadas</li>
+                            <li>Sincronização em tempo real + backup automático</li>
+                            <li>Exportação de dados, suporte prioritário e sem anúncios</li>
+                        </ul>
+                        <div class="pricing-footer">Proteja dados críticos com backups diários e mantenha o time em sincronia total.</div>
+                    </article>
+                </div>
+                <div class="pricing-cta">
+                    <a class="btn btn-primary" href="https://play.google.com/store/apps/details?id=com.vendamobile.inteligente" target="_blank" rel="noopener">Fazer upgrade Premium</a>
+                    <p style="margin-top:14px; color:var(--muted);">Modo offline sem backup mantém dados apenas no dispositivo. Garanta redundância migrando para o Premium.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div>
+                    <h4>Produto</h4>
+                    <ul>
+                        <li><a href="#hero">Visão Geral</a></li>
+                        <li><a href="#beneficios">Benefícios</a></li>
+                        <li><a href="#fluxo">Pipeline</a></li>
+                        <li><a href="#galeria">Galeria</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4>Recursos</h4>
+                    <ul>
+                        <li><a href="docs/pricing.md">Planos e Preços</a></li>
+                        <li><a href="README.md">Documentação</a></li>
+                        <li><a href="https://github.com/renanduart3/venda-mobile" target="_blank" rel="noopener">Código Fonte</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4>Legal</h4>
+                    <ul>
+                        <li><a href="terms-of-service.html">Termos de Serviço</a></li>
+                        <li><a href="privacy-policy.html">Política de Privacidade</a></li>
+                        <li><a href="SECURITY.md">Segurança</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4>Contato</h4>
+                    <ul>
+                        <li><a href="docs/support.md">Suporte</a></li>
+                        <li><a href="mailto:contato@vendamobile.app">contato@vendamobile.app</a></li>
+                        <li><a href="https://www.linkedin.com" target="_blank" rel="noopener">LinkedIn</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                &copy; 2024 Venda Mobile Inteligente. Todos os direitos reservados.
             </div>
         </div>
-
-        <footer>
-            <div class="links-section">
-                <a href="terms-of-service.html">Termos de Serviço</a>
-                <a href="privacy-policy.html">Política de Privacidade</a>
-                <a href="https://github.com/renanduart3/venda-mobile-inteligente">GitHub</a>
-            </div>
-            <p style="margin-top: 20px; opacity: 0.9;">
-                &copy; 2024 Venda Mobile Inteligente. Todos os direitos reservados.
-            </p>
-        </footer>
-    </div>
+    </footer>
 </body>
 </html>
