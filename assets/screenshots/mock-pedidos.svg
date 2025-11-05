@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 420">
+  <rect width="640" height="420" rx="28" fill="#10163a"/>
+  <rect x="32" y="40" width="576" height="340" rx="26" fill="#161d4a"/>
+  <rect x="64" y="72" width="512" height="60" rx="18" fill="#ffffff" opacity="0.9"/>
+  <text x="92" y="112" fill="#5b67f1" font-family="Inter, sans-serif" font-size="26" font-weight="700">Pedidos</text>
+  <g transform="translate(64,156)">
+    <rect width="512" height="196" rx="22" fill="#f8f9ff" opacity="0.95"/>
+    <g fill="#d5d9ff">
+      <rect x="28" y="36" width="456" height="22" rx="11"/>
+      <rect x="28" y="70" width="360" height="18" rx="9"/>
+      <rect x="28" y="104" width="420" height="18" rx="9"/>
+      <rect x="28" y="138" width="320" height="18" rx="9"/>
+    </g>
+    <g transform="translate(392,28)">
+      <rect width="84" height="84" rx="22" fill="#5b67f1" opacity="0.18"/>
+      <path d="M20 54l20-20 16 16 24-28" fill="none" stroke="#5b67f1" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
+    </g>
+    <rect x="28" y="28" width="64" height="64" rx="20" fill="#5b67f1" opacity="0.2"/>
+    <text x="48" y="70" fill="#5b67f1" font-family="Inter, sans-serif" font-weight="700" font-size="28">#1284</text>
+  </g>
+  <rect x="64" y="320" width="240" height="40" rx="16" fill="#5b67f1" opacity="0.65"/>
+  <rect x="324" y="320" width="252" height="40" rx="16" fill="#5b67f1" opacity="0.35"/>
+</svg>
