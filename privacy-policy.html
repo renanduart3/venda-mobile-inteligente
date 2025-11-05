@@ -5,175 +5,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Política de Privacidade - Venda Mobile Inteligente">
     <title>Política de Privacidade - Venda Mobile Inteligente</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
-            line-height: 1.6;
-            color: #333;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            min-height: 100vh;
-        }
-
-        .container {
-            max-width: 900px;
-            margin: 0 auto;
-            padding: 20px;
-        }
-
-        header {
-            text-align: center;
-            padding: 40px 20px;
-            color: white;
-        }
-
-        h1 {
-            font-size: 2.5em;
-            margin-bottom: 10px;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
-        }
-
-        .back-link {
-            color: white;
-            text-decoration: none;
-            font-size: 1.1em;
-            display: inline-block;
-            margin-bottom: 20px;
-            opacity: 0.9;
-        }
-
-        .back-link:hover {
-            opacity: 1;
-            text-decoration: underline;
-        }
-
-        .content {
-            background: white;
-            border-radius: 12px;
-            padding: 40px;
-            margin: 20px auto;
-            box-shadow: 0 10px 40px rgba(0,0,0,0.2);
-        }
-
-        .update-date {
-            color: #666;
-            font-style: italic;
-            margin-bottom: 30px;
-            text-align: center;
-        }
-
-        h2 {
-            color: #667eea;
-            margin-top: 30px;
-            margin-bottom: 15px;
-            font-size: 1.8em;
-        }
-
-        h3 {
-            color: #764ba2;
-            margin-top: 20px;
-            margin-bottom: 10px;
-            font-size: 1.3em;
-        }
-
-        p {
-            margin-bottom: 15px;
-            text-align: justify;
-        }
-
-        ul, ol {
-            margin-left: 30px;
-            margin-bottom: 15px;
-        }
-
-        li {
-            margin-bottom: 10px;
-        }
-
-        .important {
-            background: #d1ecf1;
-            border-left: 4px solid #0c5460;
-            padding: 15px;
-            margin: 20px 0;
-            border-radius: 4px;
-        }
-
-        .highlight {
-            background: #f8f9fa;
-            padding: 20px;
-            border-radius: 8px;
-            margin: 20px 0;
-        }
-
-        footer {
-            text-align: center;
-            padding: 30px 20px;
-            color: white;
-            margin-top: 40px;
-        }
-
-        footer a {
-            color: white;
-            text-decoration: underline;
-            margin: 0 10px;
-        }
-
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            margin: 20px 0;
-        }
-
-        th, td {
-            border: 1px solid #ddd;
-            padding: 12px;
-            text-align: left;
-        }
-
-        th {
-            background-color: #667eea;
-            color: white;
-        }
-
-        tr:nth-child(even) {
-            background-color: #f8f9fa;
-        }
-
-        @media (max-width: 768px) {
-            .content {
-                padding: 20px;
-            }
-
-            h1 {
-                font-size: 2em;
-            }
-
-            h2 {
-                font-size: 1.5em;
-            }
-
-            table {
-                font-size: 0.9em;
-            }
-        }
-    </style>
+    <link rel="stylesheet" href="assets/css/site.css">
 </head>
-<body>
-    <div class="container">
-        <header>
+<body data-theme="light">
+    <div class="container container--narrow">
+        <header class="site-header site-header--compact">
             <a href="index.html" class="back-link">← Voltar para Home</a>
-            <h1>🔒 Política de Privacidade</h1>
+            <h1 class="hero-title">🔒 Política de Privacidade</h1>
         </header>
 
-        <div class="content">
+        <div class="surface surface--narrow animate-fade-in">
             <p class="update-date">Última atualização: 31 de outubro de 2024</p>
 
-            <div class="important">
+            <div class="important important--info">
                 <p>
                     <strong>Sua privacidade é importante para nós.</strong> Esta Política de Privacidade 
                     explica como coletamos, usamos, compartilhamos e protegemos suas informações pessoais 
@@ -181,9 +25,9 @@
                 </p>
             </div>
 
-            <h2>1. Informações que Coletamos</h2>
+            <h2 class="section-title mt-0">1. Informações que Coletamos</h2>
             
-            <h3>1.1 Informações Fornecidas por Você</h3>
+            <h3 class="text-secondary">1.1 Informações Fornecidas por Você</h3>
             <p>Coletamos informações que você nos fornece diretamente, incluindo:</p>
             <ul>
                 <li><strong>Informações de Cadastro:</strong> Nome, e-mail, telefone e outras informações de contato quando você cria uma conta</li>
@@ -192,7 +36,7 @@
                 <li><strong>Comunicações:</strong> Informações quando você entra em contato conosco para suporte ou feedback</li>
             </ul>
 
-            <h3>1.2 Informações Coletadas Automaticamente</h3>
+            <h3 class="text-secondary">1.2 Informações Coletadas Automaticamente</h3>
             <p>Quando você usa o aplicativo, podemos coletar automaticamente:</p>
             <ul>
                 <li><strong>Informações do Dispositivo:</strong> Tipo de dispositivo, sistema operacional, versão do aplicativo</li>
@@ -201,12 +45,12 @@
                 <li><strong>Logs e Dados Técnicos:</strong> Endereço IP, identificadores de dispositivo, dados de desempenho</li>
             </ul>
 
-            <h2>2. Como Usamos Suas Informações</h2>
+            <h2 class="section-title">2. Como Usamos Suas Informações</h2>
             
             <p>Utilizamos as informações coletadas para:</p>
             
             <div class="highlight">
-                <h3>Prestação de Serviços</h3>
+                <h3 class="text-secondary">Prestação de Serviços</h3>
                 <ul>
                     <li>Fornecer, manter e melhorar o aplicativo</li>
                     <li>Processar e gerenciar suas transações e dados de vendas</li>
@@ -214,14 +58,14 @@
                     <li>Gerar relatórios e análises solicitadas por você</li>
                 </ul>
 
-                <h3>Comunicação</h3>
+                <h3 class="text-secondary">Comunicação</h3>
                 <ul>
                     <li>Responder a suas perguntas e solicitações de suporte</li>
                     <li>Enviar atualizações importantes sobre o aplicativo</li>
                     <li>Notificá-lo sobre mudanças em nossos serviços</li>
                 </ul>
 
-                <h3>Melhoria e Segurança</h3>
+                <h3 class="text-secondary">Melhoria e Segurança</h3>
                 <ul>
                     <li>Monitorar e analisar tendências de uso</li>
                     <li>Detectar, prevenir e resolver problemas técnicos</li>
@@ -230,7 +74,7 @@
                 </ul>
             </div>
 
-            <h2>3. Compartilhamento de Informações</h2>
+            <h2 class="section-title">3. Compartilhamento de Informações</h2>
             
             <p>Não vendemos suas informações pessoais. Podemos compartilhar suas informações apenas nas seguintes circunstâncias:</p>
 
@@ -265,7 +109,7 @@
                 </tbody>
             </table>
 
-            <h2>4. Segurança dos Dados</h2>
+            <h2 class="section-title">4. Segurança dos Dados</h2>
             
             <p>
                 Implementamos medidas de segurança técnicas, administrativas e físicas para proteger suas 
@@ -287,41 +131,41 @@
                 </p>
             </div>
 
-            <h2>5. Seus Direitos e Escolhas</h2>
+            <h2 class="section-title">5. Seus Direitos e Escolhas</h2>
             
             <p>Você tem os seguintes direitos em relação às suas informações pessoais:</p>
             
-            <h3>5.1 Acesso e Correção</h3>
+            <h3 class="text-secondary">5.1 Acesso e Correção</h3>
             <p>
                 Você pode acessar e atualizar suas informações pessoais diretamente no aplicativo através 
                 das configurações de perfil.
             </p>
 
-            <h3>5.2 Exclusão de Dados</h3>
+            <h3 class="text-secondary">5.2 Exclusão de Dados</h3>
             <p>
                 Você pode solicitar a exclusão de sua conta e dados associados a qualquer momento. Note que 
                 algumas informações podem ser retidas conforme exigido por lei ou para fins legítimos de negócios.
             </p>
 
-            <h3>5.3 Portabilidade de Dados</h3>
+            <h3 class="text-secondary">5.3 Portabilidade de Dados</h3>
             <p>
                 Você pode exportar seus dados em formato estruturado através das opções de exportação disponíveis 
                 no aplicativo.
             </p>
 
-            <h3>5.4 Opt-out de Comunicações</h3>
+            <h3 class="text-secondary">5.4 Opt-out de Comunicações</h3>
             <p>
                 Você pode optar por não receber comunicações promocionais, mas ainda receberá notificações 
                 importantes sobre o serviço.
             </p>
 
-            <h3>5.5 Configurações de Privacidade</h3>
+            <h3 class="text-secondary">5.5 Configurações de Privacidade</h3>
             <p>
                 Você pode gerenciar permissões do aplicativo (como localização) através das configurações do 
                 seu dispositivo.
             </p>
 
-            <h2>6. Retenção de Dados</h2>
+            <h2 class="section-title">6. Retenção de Dados</h2>
             
             <p>
                 Mantemos suas informações pessoais apenas pelo tempo necessário para cumprir os propósitos 
@@ -334,7 +178,7 @@
                 conforme nossas políticas de retenção.
             </p>
 
-            <h2>7. Privacidade de Crianças</h2>
+            <h2 class="section-title">7. Privacidade de Crianças</h2>
             
             <p>
                 O Venda Mobile Inteligente não é direcionado a menores de 18 anos. Não coletamos intencionalmente 
@@ -342,7 +186,7 @@
                 sem verificação de consentimento parental, tomaremos medidas para excluir essas informações.
             </p>
 
-            <h2>8. Transferências Internacionais</h2>
+            <h2 class="section-title">8. Transferências Internacionais</h2>
             
             <p>
                 Suas informações podem ser transferidas e mantidas em servidores localizados fora do seu país 
@@ -350,7 +194,7 @@
                 você concorda com tais transferências.
             </p>
 
-            <h2>9. Cookies e Tecnologias Similares</h2>
+            <h2 class="section-title">9. Cookies e Tecnologias Similares</h2>
             
             <p>
                 Utilizamos cookies e tecnologias similares para melhorar a funcionalidade do aplicativo, 
@@ -358,7 +202,7 @@
                 através das configurações do seu dispositivo.
             </p>
 
-            <h2>10. Alterações nesta Política</h2>
+            <h2 class="section-title">10. Alterações nesta Política</h2>
             
             <p>
                 Podemos atualizar esta Política de Privacidade periodicamente. Notificaremos você sobre 
@@ -370,14 +214,14 @@
                 como protegemos suas informações.
             </p>
 
-            <h2>11. Lei Aplicável</h2>
+            <h2 class="section-title">11. Lei Aplicável</h2>
             
             <p>
                 Esta Política de Privacidade é regida pelas leis do Brasil, incluindo a Lei Geral de Proteção 
                 de Dados (LGPD - Lei nº 13.709/2018).
             </p>
 
-            <h2>12. Contato</h2>
+            <h2 class="section-title">12. Contato</h2>
             
             <p>
                 Se você tiver dúvidas, preocupações ou solicitações relacionadas a esta Política de Privacidade 
@@ -398,12 +242,12 @@
         </div>
 
         <footer>
-            <p>
+            <div class="links-section footer-links">
                 <a href="index.html">Home</a>
                 <a href="terms-of-service.html">Termos de Serviço</a>
                 <a href="https://github.com/renanduart3/venda-mobile-inteligente">GitHub</a>
-            </p>
-            <p style="margin-top: 15px; opacity: 0.9;">
+            </div>
+            <p class="footer-note">
                 &copy; 2024 Venda Mobile Inteligente. Todos os direitos reservados.
             </p>
         </footer>

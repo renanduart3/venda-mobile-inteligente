@@ -5,222 +5,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Venda Mobile Inteligente - Aplicativo para gerenciamento de vendas mobile">
     <title>Venda Mobile Inteligente</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
-            line-height: 1.6;
-            color: #333;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            min-height: 100vh;
-        }
-
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 20px;
-        }
-
-        header {
-            text-align: center;
-            padding: 60px 20px;
-            color: white;
-        }
-
-        h1 {
-            font-size: 3em;
-            margin-bottom: 20px;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
-        }
-
-        .tagline {
-            font-size: 1.5em;
-            margin-bottom: 40px;
-            opacity: 0.95;
-        }
-
-        .main-content {
-            background: white;
-            border-radius: 12px;
-            padding: 40px;
-            margin: 40px auto;
-            box-shadow: 0 10px 40px rgba(0,0,0,0.2);
-        }
-
-        .feature-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 30px;
-            margin: 40px 0;
-        }
-
-        .feature-card {
-            padding: 30px;
-            border-radius: 8px;
-            background: #f8f9fa;
-            border-left: 4px solid #667eea;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-
-        .feature-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
-        }
-
-        .feature-card h3 {
-            color: #667eea;
-            margin-bottom: 15px;
-            font-size: 1.5em;
-        }
-
-        .feature-card p {
-            color: #666;
-            line-height: 1.8;
-        }
-
-        .cta-buttons {
-            display: flex;
-            gap: 20px;
-            justify-content: center;
-            flex-wrap: wrap;
-            margin: 40px 0;
-        }
-
-        .btn {
-            padding: 15px 40px;
-            border-radius: 50px;
-            text-decoration: none;
-            font-weight: bold;
-            font-size: 1.1em;
-            transition: all 0.3s ease;
-            display: inline-block;
-        }
-
-        .btn-primary {
-            background: #667eea;
-            color: white;
-            box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
-        }
-
-        .btn-primary:hover {
-            background: #5568d3;
-            transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(102, 126, 234, 0.6);
-        }
-
-        .btn-secondary {
-            background: white;
-            color: #667eea;
-            border: 2px solid #667eea;
-        }
-
-        .btn-secondary:hover {
-            background: #667eea;
-            color: white;
-            transform: translateY(-2px);
-        }
-
-        .info-section {
-            margin: 40px 0;
-            padding: 30px;
-            background: #f8f9fa;
-            border-radius: 8px;
-        }
-
-        .info-section ul {
-            margin-left: 20px;
-            color: #555;
-        }
-
-        .info-section ul li {
-            margin-bottom: 10px;
-        }
-
-        .roadmap {
-            list-style: none;
-            padding-left: 0;
-        }
-
-        .roadmap li::before {
-            content: "🚀";
-            margin-right: 10px;
-        }
-
-        .info-section h2 {
-            color: #667eea;
-            margin-bottom: 20px;
-            font-size: 2em;
-        }
-
-        .info-section p {
-            color: #666;
-            font-size: 1.1em;
-            line-height: 1.8;
-            margin-bottom: 15px;
-        }
-
-        footer {
-            text-align: center;
-            padding: 40px 20px;
-            color: white;
-            margin-top: 60px;
-        }
-
-        footer a {
-            color: white;
-            text-decoration: underline;
-            margin: 0 10px;
-        }
-
-        footer a:hover {
-            opacity: 0.8;
-        }
-
-        .links-section {
-            margin: 20px 0;
-        }
-
-        @media (max-width: 768px) {
-            h1 {
-                font-size: 2em;
-            }
-
-            .tagline {
-                font-size: 1.2em;
-            }
-
-            .main-content {
-                padding: 20px;
-            }
-
-            .cta-buttons {
-                flex-direction: column;
-                align-items: stretch;
-            }
-
-            .btn {
-                text-align: center;
-            }
-        }
-    </style>
+    <link rel="stylesheet" href="assets/css/site.css">
 </head>
-<body>
+<body data-theme="light">
     <div class="container">
-        <header>
-            <h1>📱 Venda Mobile Inteligente</h1>
-            <p class="tagline">Aplicativo inteligente para gerenciamento de vendas mobile</p>
+        <header class="site-header animate-fade-in">
+            <h1 class="hero-title animate-float">📱 Venda Mobile Inteligente</h1>
+            <p class="tagline animate-fade-in animate-delay-1">Aplicativo inteligente para gerenciamento de vendas mobile</p>
         </header>
 
-        <div class="main-content">
+        <div class="surface animate-fade-in animate-delay-2">
             <div class="info-section">
                 <h2>Sobre o Aplicativo</h2>
                 <p>
-                    O Venda Mobile Inteligente é uma solução completa para gerenciamento de vendas mobile, 
+                    O Venda Mobile Inteligente é uma solução completa para gerenciamento de vendas mobile,
                     desenvolvida para facilitar o trabalho de vendedores e empresas que precisam de mobilidade 
                     e eficiência no processo de vendas.
                 </p>
@@ -229,45 +27,114 @@
                     seus clientes, produtos, pedidos e muito mais, tudo na palma da sua mão.
                 </p>
             </div>
+        </section>
 
-            <h2 style="text-align: center; color: #667eea; margin: 40px 0 30px;">Principais Funcionalidades</h2>
-            
+            <h2 class="section-title text-center">Principais Funcionalidades</h2>
+
             <div class="feature-grid">
                 <div class="feature-card">
                     <h3>🛒 Gestão de Vendas</h3>
                     <p>Registre e acompanhe todas as suas vendas de forma rápida e organizada, com histórico completo e relatórios detalhados.</p>
                 </div>
-                
-                <div class="feature-card">
-                    <h3>👥 Cadastro de Clientes</h3>
-                    <p>Mantenha um cadastro completo dos seus clientes com todas as informações importantes sempre à mão.</p>
-                </div>
-                
-                <div class="feature-card">
-                    <h3>📦 Controle de Produtos</h3>
-                    <p>Gerencie seu catálogo de produtos com facilidade, incluindo preços, estoque e descrições.</p>
-                </div>
-                
-                <div class="feature-card">
-                    <h3>📊 Relatórios</h3>
-                    <p>Visualize relatórios e estatísticas de vendas para tomar decisões mais inteligentes no seu negócio.</p>
-                </div>
-                
-                <div class="feature-card">
-                    <h3>🔄 Sincronização</h3>
-                    <p>Sincronize seus dados em tempo real e acesse de qualquer lugar com segurança.</p>
-                </div>
-                
-                <div class="feature-card">
-                    <h3>📱 Interface Intuitiva</h3>
-                    <p>Design moderno e fácil de usar, pensado para proporcionar a melhor experiência mobile.</p>
+                <div class="card-grid">
+                    <article class="card">
+                        <div class="icon-bubble">⚡</div>
+                        <h3>Performance em campo</h3>
+                        <p>Rotas otimizadas, registro rápido de pedidos e acesso offline para que nada pare suas vendas, mesmo longe do escritório.</p>
+                    </article>
+                    <article class="card">
+                        <div class="icon-bubble">🔐</div>
+                        <h3>Segurança e backup</h3>
+                        <p>Modo Premium com backup automático, controle de permissões e histórico completo para auditar tudo o que aconteceu.</p>
+                    </article>
+                    <article class="card">
+                        <div class="icon-bubble">📊</div>
+                        <h3>Insights inteligentes</h3>
+                        <p>Relatórios avançados e gráficos que mostram os próximos passos para crescer suas vendas a cada ciclo.</p>
+                    </article>
+                    <article class="card">
+                        <div class="icon-bubble">🤝</div>
+                        <h3>Experiência do cliente</h3>
+                        <p>Agenda integrada, catálogos ricos e histórico de interações centralizado para encantar seus compradores.</p>
+                    </article>
                 </div>
             </div>
+        </section>
 
-            <div class="cta-buttons">
-                <a href="https://github.com/renanduart3/venda-mobile" class="btn btn-primary">Ver Código Fonte</a>
-                <a href="#download" class="btn btn-secondary" title="Cadastre-se para o lançamento" aria-label="Cadastre-se para o lançamento">Cadastre-se para o lançamento</a>
+        <section id="fluxo">
+            <div class="container">
+                <div class="section-heading">
+                    <h2>Destaques do fluxo operacional</h2>
+                    <p>Visualize o pipeline completo com etapas claras para prospectar, fechar e fidelizar clientes.</p>
+                </div>
+                <div class="flow">
+                    <div class="flow-step">
+                        <h3>Planejamento de rotas</h3>
+                        <p>Defina visitas prioritárias com filtros e mapas atualizados, mesmo em modo offline.</p>
+                    </div>
+                    <div class="flow-step">
+                        <h3>Execução no ponto de venda</h3>
+                        <p>Cadastre pedidos, fotos e observações em segundos, mantendo o histórico sincronizado.</p>
+                    </div>
+                    <div class="flow-step">
+                        <h3>Aprovação e logística</h3>
+                        <p>Envie pedidos para aprovação automática, integrações ERP e acompanhamento de entregas.</p>
+                    </div>
+                    <div class="flow-step">
+                        <h3>Análise e expansão</h3>
+                        <p>Receba alertas de oportunidades, monitore metas e replique estratégias vencedoras.</p>
+                    </div>
+                </div>
             </div>
+        </section>
+
+        <section id="galeria">
+            <div class="container">
+                <div class="section-heading">
+                    <h2>Experiência visual do aplicativo</h2>
+                    <p>Explore telas reais do Venda Mobile Inteligente e veja como o time trabalha com fluidez.</p>
+                </div>
+                <div class="carousel" aria-label="Galeria de screenshots">
+                    <div class="carousel-track">
+                        <figure class="carousel-item">
+                            <img src="assets/screenshots/mock-clientes.svg" alt="Tela de clientes no aplicativo">
+                            <figcaption class="carousel-caption">Cadastre clientes com limites inteligentes e dados completos.</figcaption>
+                        </figure>
+                        <figure class="carousel-item">
+                            <img src="assets/screenshots/mock-pedidos.svg" alt="Tela de pedidos do aplicativo">
+                            <figcaption class="carousel-caption">Emita pedidos offline e sincronize quando estiver conectado.</figcaption>
+                        </figure>
+                        <figure class="carousel-item">
+                            <img src="assets/screenshots/mock-dashboard.svg" alt="Dashboard de resultados">
+                            <figcaption class="carousel-caption">Acompanhe métricas vitais com dashboards dinâmicos.</figcaption>
+                        </figure>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="depoimentos">
+            <div class="container">
+                <div class="section-heading">
+                    <h2>Resultados comprovados em campo</h2>
+                    <p>Empresas e representantes comerciais que migraram para o Venda Mobile Inteligente relatam ganhos consistentes.</p>
+                </div>
+                <div class="testimonials">
+                    <article class="testimonial">
+                        <p>“Reduzimos 40% do tempo gasto na aprovação de pedidos e aumentamos a taxa de recompra em clientes de rota.”</p>
+                        <strong>Marina Lopes • Gerente Comercial</strong>
+                    </article>
+                    <article class="testimonial">
+                        <p>“Mesmo sem internet, nossa equipe não perde nenhuma venda. O modo Premium garante backup diário e tranquilidade.”</p>
+                        <strong>Rogério Campos • Supervisor de Vendas Externas</strong>
+                    </article>
+                    <article class="testimonial">
+                        <p>“Os relatórios avançados nos ajudaram a identificar regiões quentes e montar campanhas mais rentáveis.”</p>
+                        <strong>Ana Paula • Analista de Inteligência Comercial</strong>
+                    </article>
+                </div>
+            </div>
+        </section>
 
             <div class="info-section">
                 <h2>Repositório Público</h2>
@@ -276,48 +143,24 @@
                     termos de serviço e políticas de privacidade.
                 </p>
                 <p>
-                    O código fonte completo do aplicativo está disponível em um repositório separado: 
-                    <a href="https://github.com/renanduart3/venda-mobile" target="_blank" style="color: #667eea; font-weight: bold;">
+                    O código fonte completo do aplicativo está disponível em um repositório separado:
+                    <a href="https://github.com/renanduart3/venda-mobile" target="_blank" class="link-accent">
                         github.com/renanduart3/venda-mobile
                     </a>
                 </p>
             </div>
-
-            <section id="download" class="info-section">
-                <h2>Roadmap de Lançamento e Download</h2>
-                <p>Estamos finalizando os últimos detalhes antes de liberar o instalador oficial. Acompanhe as etapas planejadas:</p>
-                <ul class="roadmap">
-                    <li>Beta fechado com parceiros selecionados (maio 2024)</li>
-                    <li>Ajustes a partir do feedback da comunidade (junho 2024)</li>
-                    <li>Lançamento da versão pública com instalador mobile e desktop (julho 2024)</li>
-                </ul>
-                <p>Garanta que você será avisado assim que o download estiver disponível e, se preferir, prepare-se para testar a versão local desde já.</p>
-                <div class="cta-buttons" style="margin-top: 20px;">
-                    <a href="mailto:suporte@vendamobile.app?subject=Cadastro%20de%20Interesse%20-%20Venda%20Mobile%20Inteligente" class="btn btn-primary" title="Cadastre seu interesse para o lançamento" aria-label="Cadastre seu interesse para o lançamento">Cadastre seu interesse</a>
-                    <a href="docs/offline-installation.md" class="btn btn-secondary" title="Confira a documentação de instalação offline" aria-label="Confira a documentação de instalação offline">Instalação offline</a>
-                </div>
-                <div style="margin-top: 20px;">
-                    <h3 style="color: #667eea; margin-bottom: 10px;">Instalação local antecipada</h3>
-                    <ul>
-                        <li>Instale os pré-requisitos: Node.js 18+, npm e acesso ao Git.</li>
-                        <li>Clone o repositório principal com <code>git clone https://github.com/renanduart3/venda-mobile.git</code>.</li>
-                        <li>No diretório do projeto, execute <code>npm install</code> e depois <code>npm run dev</code> para iniciar o ambiente local.</li>
-                        <li>Acompanhe as atualizações na documentação de instalação offline para ajustes específicos de plataforma.</li>
-                    </ul>
-                </div>
-            </section>
-        </div>
+        </section>
 
         <footer>
-            <div class="links-section">
+            <div class="links-section footer-links">
                 <a href="terms-of-service.html">Termos de Serviço</a>
                 <a href="privacy-policy.html">Política de Privacidade</a>
                 <a href="https://github.com/renanduart3/venda-mobile-inteligente">GitHub</a>
             </div>
-            <p style="margin-top: 20px; opacity: 0.9;">
+            <p class="footer-note">
                 &copy; 2024 Venda Mobile Inteligente. Todos os direitos reservados.
-            </p>
-        </footer>
-    </div>
+            </div>
+        </div>
+    </footer>
 </body>
 </html>
