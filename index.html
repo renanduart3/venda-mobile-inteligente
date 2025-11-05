@@ -132,6 +132,25 @@
             border-radius: 8px;
         }
 
+        .info-section ul {
+            margin-left: 20px;
+            color: #555;
+        }
+
+        .info-section ul li {
+            margin-bottom: 10px;
+        }
+
+        .roadmap {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .roadmap li::before {
+            content: "🚀";
+            margin-right: 10px;
+        }
+
         .info-section h2 {
             color: #667eea;
             margin-bottom: 20px;
@@ -247,13 +266,13 @@
 
             <div class="cta-buttons">
                 <a href="https://github.com/renanduart3/venda-mobile" class="btn btn-primary">Ver Código Fonte</a>
-                <a href="#download" class="btn btn-secondary">Download em Breve</a>
+                <a href="#download" class="btn btn-secondary" title="Cadastre-se para o lançamento" aria-label="Cadastre-se para o lançamento">Cadastre-se para o lançamento</a>
             </div>
 
             <div class="info-section">
                 <h2>Repositório Público</h2>
                 <p>
-                    Este é o repositório público do Venda Mobile Inteligente, contendo documentação, 
+                    Este é o repositório público do Venda Mobile Inteligente, contendo documentação,
                     termos de serviço e políticas de privacidade.
                 </p>
                 <p>
@@ -263,6 +282,30 @@
                     </a>
                 </p>
             </div>
+
+            <section id="download" class="info-section">
+                <h2>Roadmap de Lançamento e Download</h2>
+                <p>Estamos finalizando os últimos detalhes antes de liberar o instalador oficial. Acompanhe as etapas planejadas:</p>
+                <ul class="roadmap">
+                    <li>Beta fechado com parceiros selecionados (maio 2024)</li>
+                    <li>Ajustes a partir do feedback da comunidade (junho 2024)</li>
+                    <li>Lançamento da versão pública com instalador mobile e desktop (julho 2024)</li>
+                </ul>
+                <p>Garanta que você será avisado assim que o download estiver disponível e, se preferir, prepare-se para testar a versão local desde já.</p>
+                <div class="cta-buttons" style="margin-top: 20px;">
+                    <a href="mailto:suporte@vendamobile.app?subject=Cadastro%20de%20Interesse%20-%20Venda%20Mobile%20Inteligente" class="btn btn-primary" title="Cadastre seu interesse para o lançamento" aria-label="Cadastre seu interesse para o lançamento">Cadastre seu interesse</a>
+                    <a href="docs/offline-installation.md" class="btn btn-secondary" title="Confira a documentação de instalação offline" aria-label="Confira a documentação de instalação offline">Instalação offline</a>
+                </div>
+                <div style="margin-top: 20px;">
+                    <h3 style="color: #667eea; margin-bottom: 10px;">Instalação local antecipada</h3>
+                    <ul>
+                        <li>Instale os pré-requisitos: Node.js 18+, npm e acesso ao Git.</li>
+                        <li>Clone o repositório principal com <code>git clone https://github.com/renanduart3/venda-mobile.git</code>.</li>
+                        <li>No diretório do projeto, execute <code>npm install</code> e depois <code>npm run dev</code> para iniciar o ambiente local.</li>
+                        <li>Acompanhe as atualizações na documentação de instalação offline para ajustes específicos de plataforma.</li>
+                    </ul>
+                </div>
+            </section>
         </div>
 
         <footer>
