@@ -1,292 +1,323 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Venda Mobile Inteligente - Aplicativo completo para gerenciamento de vendas mobile com recursos avançados">
-    <meta name="keywords" content="vendas mobile, gestão comercial, aplicativo vendas, CRM mobile">
-    <meta name="author" content="Venda Mobile Inteligente">
-    <title>Venda Mobile Inteligente - Gestão Inteligente de Vendas</title>
-    <link rel="stylesheet" href="assets/css/site.css">
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>Loja Inteligente - Vendas & Estoque</title>
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&amp;display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+    <script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#14532d", // Dark Green
+                        "background-light": "#f6f6f8",
+                        "background-dark": "#101622",
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "sans-serif"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            min-height: 100vh;
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
 </head>
-<body data-theme="light">
-    <!-- Hero Section -->
-    <header class="site-header animate-fade-in">
-        <div class="container">
-            <h1 class="hero-title animate-float">📱 Venda Mobile Inteligente 2</h1>
-            <p class="tagline animate-fade-in animate-delay-1">Transforme sua gestão de vendas com inteligência e mobilidade</p>
-            <div class="cta-buttons animate-fade-in animate-delay-2">
-                <a href="#funcionalidades" class="btn btn-primary">Conheça as Funcionalidades</a>
-                <a href="#documentacao" class="btn btn-secondary">Documentação</a>
+<body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 font-display">
+    <!-- Navigation -->
+    <nav class="sticky top-0 z-50 w-full bg-white/80 dark:bg-background-dark/80 backdrop-blur-md border-b border-primary/10">
+        <div class="max-w-7xl mx-auto px-4 h-16 flex items-center justify-between">
+            <div class="flex items-center gap-3">
+                <!-- Logo Image Placeholder - User needs to place logo.png in root -->
+                <img src="logo.png" alt="Logo Loja Inteligente" class="h-10 w-auto rounded-lg" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
+                <div class="hidden items-center gap-2">
+                    <span class="material-symbols-outlined text-primary text-3xl">shopping_cart</span>
+                    <span class="text-xl font-black tracking-tight text-primary">Loja Inteligente</span>
+                </div>
+            </div>
+            <div class="hidden md:flex items-center gap-8 text-sm font-medium">
+                <a class="hover:text-primary transition-colors" href="#beneficios">Benefícios</a>
+                <a class="hover:text-primary transition-colors" href="#recursos">Recursos</a>
+                <a class="hover:text-primary transition-colors" href="#screenshots">Screenshots</a>
+                <a class="hover:text-primary transition-colors" href="#depoimentos">Depoimentos</a>
+                <div class="flex flex-col items-end gap-1">
+                    <a href="#" class="opacity-60 cursor-default" tabindex="-1" aria-disabled="true">
+                        <img src="https://play.google.com/intl/en_us/badges/static/images/badges/pt-br_badge_web_generic.png" alt="Disponível no Google Play" class="h-10">
+                    </a>
+                    <span class="text-[10px] font-bold text-primary/70 uppercase tracking-wider">Em breve</span>
+                </div>
             </div>
         </div>
-    </header>
+    </nav>
 
-    <!-- Main Content -->
-    <main>
-        <!-- Sobre Section -->
-        <section id="sobre" class="container">
-            <div class="surface animate-fade-in animate-delay-2">
-                <div class="info-section">
-                    <h2>🚀 Sobre o Aplicativo</h2>
-                    <p>
-                        O <strong>Venda Mobile Inteligente</strong> é uma solução completa para gerenciamento de vendas mobile,
-                        desenvolvida para facilitar o trabalho de vendedores e empresas que precisam de mobilidade 
-                        e eficiência no processo de vendas.
+    <!-- Hero Section -->
+    <section class="relative min-h-[80vh] flex flex-col justify-center">
+        <div class="max-w-7xl mx-auto px-4 py-16 md:py-24">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <div class="flex flex-col gap-8">
+                    <div class="flex flex-col gap-4">
+                        <span class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 text-primary text-xs font-bold uppercase tracking-wider w-fit">
+                            <span class="material-symbols-outlined text-sm">storefront</span> Para Autônomos e Pequenos Negócios
+                        </span>
+                        <h1 class="text-4xl md:text-6xl font-black leading-tight tracking-tight text-slate-900 dark:text-white">
+                            Controle suas vendas e estoque na <span class="text-primary">palma da mão</span>
+                        </h1>
+                        <p class="text-lg text-slate-600 dark:text-slate-400 max-w-xl leading-relaxed">
+                            O aplicativo gratuito e simples para você organizar seu negócio. Sem mensalidades, sem complicações. Ideal para quem vende por conta própria.
+                        </p>
+                    </div>
+                    <div class="flex flex-col sm:flex-row gap-4 items-center sm:items-start">
+                        <div class="flex flex-col items-center sm:items-start gap-2">
+                            <a href="#" class="opacity-60 cursor-default" tabindex="-1" aria-disabled="true">
+                                <img src="https://play.google.com/intl/en_us/badges/static/images/badges/pt-br_badge_web_generic.png" alt="Disponível no Google Play" class="h-16">
+                            </a>
+                            <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-primary/10 text-primary text-xs font-bold">
+                                <span class="material-symbols-outlined text-sm">schedule</span> Em breve na Play Store
+                            </span>
+                        </div>
+                    </div>
+                    <div class="flex items-center gap-4 pt-4">
+                        <div class="flex -space-x-3">
+                            <div class="w-10 h-10 rounded-full border-2 border-white bg-slate-200 bg-cover bg-center" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDxeq6gFXnJS5cgseub4_3h4xhRxQUPJA-Ei3iTP2cGBmA0U13LoDvJd7C3P_0e_i7sIOHUyiQIqf9bJDPjzdnfcPqBzwAB9cEXIUcdBKp43bspXDhXy1tBv6LRgwv9fXWGhHyNgq7iPJ6bhUT2O41iP3FGgBVyHsaMEDUOJOEaLagN6Bjae4HbOpPXO29QAs59UZKh9NNd6WgooL4Hzqzo7ZsMzaL3mvG5_EmaWvRBny5TCcMcwULWovVyWAMDBEkH4qzcjM0lgKI')"></div>
+                            <div class="w-10 h-10 rounded-full border-2 border-white bg-slate-300 bg-cover bg-center" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuB_zgbtFa4jzQ5rRR1oQOX5SRn2JJUePg9hNWCPDHw8u5iAYrhqceCA1RLQEMTn4zH5yrJtHoOv2pY-5rr97DlVzvJukQmPCAXGRgBBsRMjaLrY0vWa1pZ3YndEIGi5ZeszWsINifKfH2W_v8v2HluxAd1DLR4p4pxKyKrBOG-K-DR8oaoAFc2IjYpOmENdE_2p_asN2toV3CWF92gMLMgPUfvc4H7vNZBwjH_Ha1WMuDroSagITNzQDDE_1HxGF5TgC6AXm-jV6uY')"></div>
+                            <div class="w-10 h-10 rounded-full border-2 border-white bg-slate-400 bg-cover bg-center" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDhmpDLqrHmzZsCT0KvgZR0f1ZW4E7LbW8imj_MHHG5OMgnMDbBWsk0207h0txemt0RhBhd3yx50NSnSFVSuYKrKhUnqMuHZ5DTgFZLh7TF6d8tZ7F0IoaQxkVgnMc4aYEARVPWgKTUQPdV6BZXYXxu2fRMYR_88gCDno5g1KrWYF8Wl0iJNpaq_j1WSE5IG04hQBTNvs3uT8lN8Yo3u4U2rlUWcqqJunS3RbILSOjNVlt6yL2KVJXXdMkzHZ-Qc_Ng_YdjCWQA2w0')"></div>
+                        </div>
+                        <p class="text-sm font-medium text-slate-500">Usado por +5.000 vendedores</p>
+                    </div>
+                </div>
+                <div class="relative">
+                    <div class="absolute -inset-4 bg-primary/20 blur-3xl rounded-full"></div>
+                    <div class="relative bg-slate-200 aspect-[4/3] rounded-2xl overflow-hidden shadow-2xl border border-white/20 bg-cover bg-center" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCDCWscytszzZ2FCG6G4Vj5Dw87No0QTZLKlKdrbOJjgdoNcA3P3-wROOqkkdwWbhvbg4VlPHT5htQ-ohPAwaTpARnLjjs5syLoCkeQiA0O1DfTOptVSPuVK0Ge3Or7CySnV-X11RTTsY8AcMm0PMr-WYUK7_QhhFcOnX1cLC9ouumJtG7oPeup2_Hgx2fSsnwkHW_cHLtTK6Z8s0Daj7Ie45TA6LD30qsgaW1yA9TKsoq_AsTb7lAbzeQ3P7S4snAot6n6QVNV4tQ')">
+                    </div>
+                    <!-- Floating Card -->
+                    <div class="absolute -bottom-6 -left-6 bg-white dark:bg-slate-800 p-4 rounded-xl shadow-xl border border-slate-100 dark:border-slate-700 flex items-center gap-3">
+                        <div class="w-12 h-12 rounded-full bg-green-100 flex items-center justify-center text-green-600">
+                            <span class="material-symbols-outlined">check_circle</span>
+                        </div>
+                        <div>
+                            <p class="text-xs text-slate-500 uppercase font-bold">Venda Realizada</p>
+                            <p class="text-sm font-black">R$ 150,00</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Key Benefits Section -->
+    <section class="py-20 bg-white dark:bg-background-dark" id="beneficios">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="flex flex-col gap-4 mb-16 max-w-2xl">
+                <h2 class="text-3xl md:text-4xl font-black tracking-tight">Tudo o que você precisa</h2>
+                <p class="text-slate-600 dark:text-slate-400 text-lg">Ferramentas essenciais para organizar suas vendas sem complicações.</p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="group p-8 rounded-2xl border border-slate-100 dark:border-slate-800 bg-background-light dark:bg-slate-900/50 hover:border-primary/50 transition-all hover:shadow-xl">
+                    <div class="w-14 h-14 rounded-xl bg-primary/10 flex items-center justify-center mb-6 group-hover:bg-primary group-hover:text-white transition-colors">
+                        <span class="material-symbols-outlined text-3xl">inventory_2</span>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Controle de Estoque</h3>
+                    <p class="text-slate-600 dark:text-slate-400 leading-relaxed">Saiba exatamente o que você tem disponível para vender e evite ficar sem produtos.</p>
+                </div>
+                <div class="group p-8 rounded-2xl border border-slate-100 dark:border-slate-800 bg-background-light dark:bg-slate-900/50 hover:border-primary/50 transition-all hover:shadow-xl">
+                    <div class="w-14 h-14 rounded-xl bg-primary/10 flex items-center justify-center mb-6 group-hover:bg-primary group-hover:text-white transition-colors">
+                        <span class="material-symbols-outlined text-3xl">point_of_sale</span>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Vendas Rápidas</h3>
+                    <p class="text-slate-600 dark:text-slate-400 leading-relaxed">Registre suas vendas em segundos, calcule o troco e envie o comprovante pelo WhatsApp.</p>
+                </div>
+                <div class="group p-8 rounded-2xl border border-slate-100 dark:border-slate-800 bg-background-light dark:bg-slate-900/50 hover:border-primary/50 transition-all hover:shadow-xl">
+                    <div class="w-14 h-14 rounded-xl bg-primary/10 flex items-center justify-center mb-6 group-hover:bg-primary group-hover:text-white transition-colors">
+                        <span class="material-symbols-outlined text-3xl">wifi_off</span>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Funciona Offline</h3>
+                    <p class="text-slate-600 dark:text-slate-400 leading-relaxed">Não precisa de internet para vender. O app salva tudo e sincroniza quando você conectar.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Preview -->
+    <section class="py-20 bg-background-light dark:bg-slate-900/30" id="recursos">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
+                <div class="order-2 md:order-1">
+                    <div class="aspect-square bg-slate-200 rounded-3xl overflow-hidden border-8 border-white dark:border-slate-800 shadow-2xl bg-cover bg-center" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDoJh7bq2sjrkC6E-WOOiLjjXUPYPfwYSeqbPWCHSH9D4Y2IneCTyLna57Jm8cU0LBzclS0vbrEz6UdsnWE5r1mLBmY3agW4QCiDztmdqFnqFoP8qZ5lEhKX4n8BRmzzlwT7w4MVCujsPyaXmfBebmh_DGgYTyx0KteEJnHCBLHg4INS-ufi4FDj4b6t6q1JkWDBbLA0EHujmeR6BhmD9zEXDn2YRzwpX2GbIFXGI6oiRwZOLLWnQvLMaQ1E9Kqe1TL-G0zQv-lCFI')">
+                    </div>
+                </div>
+                <div class="order-1 md:order-2 flex flex-col gap-10">
+                    <div class="flex flex-col gap-4">
+                        <h2 class="text-3xl md:text-4xl font-black tracking-tight">Simples e Eficiente</h2>
+                        <p class="text-slate-600 dark:text-slate-400 text-lg">Foque no que importa: atender bem seus clientes e vender mais.</p>
+                    </div>
+                    <div class="space-y-6">
+                        <div class="flex gap-4">
+                            <div class="mt-1 flex-shrink-0 w-10 h-10 rounded-full bg-primary flex items-center justify-center text-white">
+                                <span class="material-symbols-outlined">receipt_long</span>
+                            </div>
+                            <div>
+                                <h4 class="text-lg font-bold">Histórico de Pedidos</h4>
+                                <p class="text-slate-600 dark:text-slate-400">Acesse rapidamente o que cada cliente comprou e quando.</p>
+                            </div>
+                        </div>
+                        <div class="flex gap-4">
+                            <div class="mt-1 flex-shrink-0 w-10 h-10 rounded-full bg-primary flex items-center justify-center text-white">
+                                <span class="material-symbols-outlined">share</span>
+                            </div>
+                            <div>
+                                <h4 class="text-lg font-bold">Compartilhe no WhatsApp</h4>
+                                <p class="text-slate-600 dark:text-slate-400">Envie recibos e orçamentos profissionais com um clique.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Screenshots Section -->
+    <section class="py-20 bg-white dark:bg-background-dark" id="screenshots">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="flex flex-col gap-4 mb-16 max-w-2xl">
+                <span class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 text-primary text-xs font-bold uppercase tracking-wider w-fit">
+                    <span class="material-symbols-outlined text-sm">smartphone</span> Screenshots
+                </span>
+                <h2 class="text-3xl md:text-4xl font-black tracking-tight">Veja o app em ação</h2>
+                <p class="text-slate-600 dark:text-slate-400 text-lg">Interface limpa e intuitiva, pensada para quem não tem tempo a perder.</p>
+            </div>
+            <!-- Screenshots — coloque as imagens em assets/screenshots/telefone/ e substitua os cards abaixo por <img> tags -->
+            <div class="flex flex-wrap gap-6 justify-center">
+                <div class="w-44 sm:w-52 aspect-[9/19] rounded-3xl bg-slate-100 dark:bg-slate-800 border-4 border-slate-200 dark:border-slate-700 flex items-center justify-center shadow-xl">
+                    <div class="flex flex-col items-center gap-2 text-slate-400">
+                        <span class="material-symbols-outlined text-4xl">smartphone</span>
+                        <span class="text-xs font-medium">Em breve</span>
+                    </div>
+                </div>
+                <div class="w-44 sm:w-52 aspect-[9/19] rounded-3xl bg-slate-100 dark:bg-slate-800 border-4 border-slate-200 dark:border-slate-700 items-center justify-center shadow-xl hidden sm:flex">
+                    <div class="flex flex-col items-center gap-2 text-slate-400">
+                        <span class="material-symbols-outlined text-4xl">smartphone</span>
+                        <span class="text-xs font-medium">Em breve</span>
+                    </div>
+                </div>
+                <div class="w-44 sm:w-52 aspect-[9/19] rounded-3xl bg-slate-100 dark:bg-slate-800 border-4 border-slate-200 dark:border-slate-700 items-center justify-center shadow-xl hidden md:flex">
+                    <div class="flex flex-col items-center gap-2 text-slate-400">
+                        <span class="material-symbols-outlined text-4xl">smartphone</span>
+                        <span class="text-xs font-medium">Em breve</span>
+                    </div>
+                </div>
+                <div class="w-44 sm:w-52 aspect-[9/19] rounded-3xl bg-slate-100 dark:bg-slate-800 border-4 border-slate-200 dark:border-slate-700 items-center justify-center shadow-xl hidden lg:flex">
+                    <div class="flex flex-col items-center gap-2 text-slate-400">
+                        <span class="material-symbols-outlined text-4xl">smartphone</span>
+                        <span class="text-xs font-medium">Em breve</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="py-20 bg-background-light dark:bg-slate-900/30" id="depoimentos">
+        <div class="max-w-4xl mx-auto px-4 text-center">
+            <h4 class="text-primary font-bold uppercase tracking-widest text-sm mb-4">Quem usa, recomenda</h4>
+            <div class="relative p-8 md:p-12 rounded-3xl bg-background-light dark:bg-slate-900 border border-slate-100 dark:border-slate-800">
+                <span class="material-symbols-outlined text-primary/20 text-7xl absolute top-6 left-6">format_quote</span>
+                <div class="flex flex-col gap-8 relative z-10">
+                    <p class="text-xl md:text-2xl font-medium leading-relaxed italic text-slate-800 dark:text-slate-200">
+                        "Antes eu anotava tudo no caderno e perdia muito tempo. Com o Loja Inteligente, consigo ver meu lucro do dia na hora. Simples e direto."
                     </p>
-                    <p>
-                        Com uma interface intuitiva e recursos poderosos, o aplicativo permite que você gerencie 
-                        seus clientes, produtos, pedidos e muito mais, tudo na palma da sua mão. Trabalhe online 
-                        ou offline, sincronize dados automaticamente e tenha relatórios inteligentes em tempo real.
-                    </p>
+                    <div class="flex flex-col items-center gap-3">
+                        <div class="w-16 h-16 rounded-full bg-slate-300 shadow-md border-2 border-white bg-cover bg-center" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAgFrQ7huSS8Owj-H5aVEntkqwAsANkpS-WFMI6MlfLSbRGIs1wYasmc4jSIOGjRfZlb_nR1p2j0z2c17kgHk1BWVeFA6t4Pge4XJo6VWKIEChKboAhR7XhwSnTMixVoeRQi6g40lN6370txlEj9Fy15Y5iQEAMpf4-Z6EpAncKron1QEGiIebvECUWq_vtEtDgsA016wtXqEHXD3XqBzkkWU5F0cQjnJKDcbOKIWIBEg0pwQ6fZ0zpbuQcI7rHGtmiHTZ-YL1CVSI')"></div>
+                        <div>
+                            <p class="font-bold text-lg">Ana Clara</p>
+                            <p class="text-slate-500 text-sm">Vendedora de Cosméticos</p>
+                        </div>
+                        <div class="flex gap-1 text-yellow-400">
+                            <span class="material-symbols-outlined fill-1">star</span>
+                            <span class="material-symbols-outlined fill-1">star</span>
+                            <span class="material-symbols-outlined fill-1">star</span>
+                            <span class="material-symbols-outlined fill-1">star</span>
+                            <span class="material-symbols-outlined fill-1">star</span>
+                        </div>
+                    </div>
                 </div>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <!-- Funcionalidades Section -->
-        <section id="funcionalidades" class="container">
-            <h2 class="section-title text-center">✨ Principais Funcionalidades</h2>
-
-            <div class="feature-grid">
-                <article class="feature-card animate-fade-in">
-                    <h3>🛒 Gestão de Vendas</h3>
-                    <p>Registre e acompanhe todas as suas vendas de forma rápida e organizada, com histórico completo e relatórios detalhados.</p>
-                </article>
-
-                <article class="feature-card animate-fade-in animate-delay-1">
-                    <h3>👥 Cadastro de Clientes</h3>
-                    <p>Mantenha um cadastro completo dos seus clientes com informações detalhadas, histórico de compras e preferências.</p>
-                </article>
-
-                <article class="feature-card animate-fade-in animate-delay-2">
-                    <h3>📦 Controle de Produtos</h3>
-                    <p>Gerencie seu catálogo de produtos com preços, imagens, estoque e categorias de forma simples e eficiente.</p>
-                </article>
-
-                <article class="feature-card animate-fade-in">
-                    <h3>📊 Relatórios Inteligentes</h3>
-                    <p>Visualize relatórios e estatísticas de vendas com gráficos interativos e insights para tomada de decisão.</p>
-                </article>
-
-                <article class="feature-card animate-fade-in animate-delay-1">
-                    <h3>🔄 Sincronização em Tempo Real</h3>
-                    <p>Sincronize seus dados automaticamente entre dispositivos, garantindo informações sempre atualizadas.</p>
-                </article>
-
-                <article class="feature-card animate-fade-in animate-delay-2">
-                    <h3>📱 Interface Moderna</h3>
-                    <p>Design moderno, intuitivo e responsivo que funciona perfeitamente em smartphones e tablets.</p>
-                </article>
-
-                <article class="feature-card animate-fade-in">
-                    <h3>⚡ Modo Offline</h3>
-                    <p>Trabalhe mesmo sem conexão com internet. Os dados são sincronizados automaticamente quando você se conectar.</p>
-                </article>
-
-                <article class="feature-card animate-fade-in animate-delay-1">
-                    <h3>🔐 Segurança Avançada</h3>
-                    <p>Seus dados protegidos com criptografia, backup automático e controle de permissões de usuário.</p>
-                </article>
-
-                <article class="feature-card animate-fade-in animate-delay-2">
-                    <h3>💎 Plano Premium</h3>
-                    <p>Recursos avançados para profissionais: relatórios ilimitados, backup em nuvem, suporte prioritário e muito mais.</p>
-                </article>
-            </div>
-        </section>
-
-        <!-- Workflow Section -->
-        <section id="fluxo" class="container">
-            <div class="surface">
-                <h2 class="section-title text-center">🔄 Fluxo Operacional</h2>
-                <p class="text-center text-muted mb-xl">Visualize o pipeline completo com etapas claras para prospectar, fechar e fidelizar clientes</p>
-                
-                <div class="feature-grid">
-                    <article class="card">
-                        <div class="badge badge-primary mb-md">Passo 1</div>
-                        <h3>📍 Planejamento de Rotas</h3>
-                        <p>Defina visitas prioritárias com filtros e mapas atualizados, otimizando seu tempo e produtividade, mesmo em modo offline.</p>
-                    </article>
-
-                    <article class="card">
-                        <div class="badge badge-primary mb-md">Passo 2</div>
-                        <h3>🎯 Execução no Ponto de Venda</h3>
-                        <p>Cadastre pedidos, anexe fotos e adicione observações em segundos, mantendo o histórico sempre sincronizado.</p>
-                    </article>
-
-                    <article class="card">
-                        <div class="badge badge-primary mb-md">Passo 3</div>
-                        <h3>✅ Aprovação e Logística</h3>
-                        <p>Envie pedidos para aprovação automática, integre com sistemas ERP e acompanhe o status das entregas em tempo real.</p>
-                    </article>
-
-                    <article class="card">
-                        <div class="badge badge-primary mb-md">Passo 4</div>
-                        <h3>📈 Análise e Expansão</h3>
-                        <p>Receba alertas de oportunidades, monitore metas de vendas e replique estratégias vencedoras para crescer ainda mais.</p>
-                    </article>
+    <!-- CTA Section -->
+    <section class="py-20">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="bg-primary rounded-3xl p-10 md:p-20 text-center text-white relative overflow-hidden shadow-2xl">
+                <div class="absolute top-0 right-0 w-64 h-64 bg-white/10 rounded-full -translate-y-1/2 translate-x-1/2 blur-3xl"></div>
+                <div class="absolute bottom-0 left-0 w-64 h-64 bg-black/10 rounded-full translate-y-1/2 -translate-x-1/2 blur-3xl"></div>
+                <div class="relative z-10 max-w-2xl mx-auto flex flex-col gap-8">
+                    <h2 class="text-3xl md:text-5xl font-black">Comece a organizar suas vendas hoje</h2>
+                    <p class="text-lg text-primary-100 opacity-90">Baixe agora gratuitamente e transforme a gestão do seu pequeno negócio.</p>
+                    <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
+                        <div class="flex flex-col items-center gap-2">
+                            <a href="#" class="opacity-60 cursor-default" tabindex="-1" aria-disabled="true">
+                                <img src="https://play.google.com/intl/en_us/badges/static/images/badges/pt-br_badge_web_generic.png" alt="Disponível no Google Play" class="h-20">
+                            </a>
+                            <span class="inline-flex items-center gap-1.5 px-4 py-1.5 rounded-full bg-white/20 text-white text-sm font-bold">
+                                <span class="material-symbols-outlined text-base">schedule</span> Em breve na Play Store
+                            </span>
+                        </div>
+                    </div>
                 </div>
             </div>
-        </section>
-
-        <!-- Screenshots Gallery -->
-        <section id="galeria" class="container">
-            <h2 class="section-title text-center">📸 Experiência Visual do Aplicativo</h2>
-            <p class="text-center text-muted mb-xl">Explore telas reais do Venda Mobile Inteligente</p>
-            
-            <div class="screenshot-grid">
-                <figure class="screenshot-item animate-fade-in">
-                    <img src="assets/screenshots/mock-clientes.svg" alt="Tela de cadastro de clientes" loading="lazy">
-                    <figcaption>
-                        <strong>Gestão de Clientes</strong>
-                        <p>Cadastre clientes com limites inteligentes e dados completos</p>
-                    </figcaption>
-                </figure>
-
-                <figure class="screenshot-item animate-fade-in animate-delay-1">
-                    <img src="assets/screenshots/mock-pedidos.svg" alt="Tela de gestão de pedidos" loading="lazy">
-                    <figcaption>
-                        <strong>Controle de Pedidos</strong>
-                        <p>Emita pedidos offline e sincronize quando estiver conectado</p>
-                    </figcaption>
-                </figure>
-
-                <figure class="screenshot-item animate-fade-in animate-delay-2">
-                    <img src="assets/screenshots/mock-dashboard.svg" alt="Dashboard com métricas e relatórios" loading="lazy">
-                    <figcaption>
-                        <strong>Dashboard Inteligente</strong>
-                        <p>Acompanhe métricas vitais com dashboards dinâmicos</p>
-                    </figcaption>
-                </figure>
-            </div>
-        </section>
-
-        <!-- Testimonials Section -->
-        <section id="depoimentos" class="container">
-            <div class="surface">
-                <h2 class="section-title text-center">💬 Resultados Comprovados</h2>
-                <p class="text-center text-muted mb-xl">
-                    Empresas e representantes comerciais que migraram para o Venda Mobile Inteligente relatam ganhos consistentes
-                </p>
-                
-                <div class="testimonial-grid">
-                    <article class="testimonial">
-                        <div class="testimonial-quote">"</div>
-                        <p>Reduzimos 40% do tempo gasto na aprovação de pedidos e aumentamos a taxa de recompra em clientes de rota.</p>
-                        <footer>
-                            <strong>Marina Lopes</strong>
-                            <span>Gerente Comercial</span>
-                        </footer>
-                    </article>
-
-                    <article class="testimonial">
-                        <div class="testimonial-quote">"</div>
-                        <p>Mesmo sem internet, nossa equipe não perde nenhuma venda. O modo Premium garante backup diário e tranquilidade.</p>
-                        <footer>
-                            <strong>Rogério Campos</strong>
-                            <span>Supervisor de Vendas Externas</span>
-                        </footer>
-                    </article>
-
-                    <article class="testimonial">
-                        <div class="testimonial-quote">"</div>
-                        <p>Os relatórios avançados nos ajudaram a identificar regiões quentes e montar campanhas mais rentáveis.</p>
-                        <footer>
-                            <strong>Ana Paula</strong>
-                            <span>Analista de Inteligência Comercial</span>
-                        </footer>
-                    </article>
-                </div>
-            </div>
-        </section>
-
-        <!-- Documentation Section -->
-        <section id="documentacao" class="container">
-            <div class="surface">
-                <h2 class="section-title text-center">📚 Documentação Completa</h2>
-                <p class="text-center text-muted mb-xl">Acesse toda a documentação do projeto</p>
-                
-                <div class="links-grid">
-                    <a href="docs/" class="link-card">
-                        <div class="link-card-icon">📖</div>
-                        <h3>Documentação</h3>
-                        <p>Guia completo de uso e configuração</p>
-                    </a>
-
-                    <a href="docs/features.html" class="link-card">
-                        <div class="link-card-icon">✨</div>
-                        <h3>Funcionalidades</h3>
-                        <p>Lista detalhada de todos os recursos</p>
-                    </a>
-
-                    <a href="docs/pricing.html" class="link-card">
-                        <div class="link-card-icon">💎</div>
-                        <h3>Planos e Preços</h3>
-                        <p>Conheça o Plano Premium</p>
-                    </a>
-
-                    <a href="docs/faq.html" class="link-card">
-                        <div class="link-card-icon">❓</div>
-                        <h3>Perguntas Frequentes</h3>
-                        <p>Tire suas dúvidas</p>
-                    </a>
-
-                    <a href="docs/support.html" class="link-card">
-                        <div class="link-card-icon">🆘</div>
-                        <h3>Suporte</h3>
-                        <p>Como obter ajuda</p>
-                    </a>
-
-                    <a href="docs/changelog.html" class="link-card">
-                        <div class="link-card-icon">📝</div>
-                        <h3>Changelog</h3>
-                        <p>Histórico de versões</p>
-                    </a>
-                </div>
-            </div>
-        </section>
-
-        <!-- Repository Info Section -->
-        <section id="repositorio" class="container">
-            <div class="info-section">
-                <h2>🌐 Repositório Público</h2>
-                <p>
-                    Este é o repositório público do <strong>Venda Mobile Inteligente</strong>, contendo documentação completa,
-                    termos de serviço, políticas de privacidade e recursos visuais.
-                </p>
-                <p>
-                    O código fonte completo do aplicativo está disponível em um repositório separado:
-                    <a href="https://github.com/renanduart3/venda-mobile" target="_blank" class="link-accent" rel="noopener noreferrer">
-                        github.com/renanduart3/venda-mobile
-                    </a>
-                </p>
-                <div class="mt-lg">
-                    <a href="https://github.com/renanduart3/venda-mobile-inteligente" target="_blank" class="btn btn-primary" rel="noopener noreferrer">
-                        ⭐ Ver no GitHub
-                    </a>
-                </div>
-            </div>
-        </section>
-    </main>
+        </div>
+    </section>
 
     <!-- Footer -->
-    <footer>
-        <div class="container">
-            <div class="footer-links">
-                <a href="terms-of-service.html">Termos de Serviço</a>
-                <span>•</span>
-                <a href="privacy-policy.html">Política de Privacidade</a>
-                <span>•</span>
-                <a href="https://github.com/renanduart3/venda-mobile-inteligente" target="_blank" rel="noopener noreferrer">GitHub</a>
-                <span>•</span>
-                <a href="docs/support.html">Suporte</a>
+    <footer class="bg-background-light dark:bg-background-dark py-12 border-t border-slate-200 dark:border-slate-800">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="flex flex-col md:flex-row justify-between items-center gap-8">
+                <div class="flex flex-col gap-4 text-center md:text-left">
+                    <div class="flex items-center justify-center md:justify-start gap-2">
+                        <span class="material-symbols-outlined text-primary text-2xl">shopping_cart</span>
+                        <span class="text-lg font-black tracking-tight text-primary">Loja Inteligente</span>
+                    </div>
+                    <p class="text-sm text-slate-500 leading-relaxed max-w-xs">
+                        Feito para ajudar pequenos empreendedores a crescerem.
+                    </p>
+                </div>
+                
+                <div class="flex flex-col gap-6 text-center md:text-right">
+                    <div>
+                        <h5 class="font-bold text-sm uppercase tracking-wider text-slate-400 mb-3">Legal</h5>
+                        <ul class="flex flex-col gap-2 text-sm text-slate-500">
+                            <li><a href="privacy-policy.html" class="hover:text-primary transition-colors">Política de Privacidade</a></li>
+                            <li><a href="terms-of-service.html" class="hover:text-primary transition-colors">Termos de Serviço</a></li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h5 class="font-bold text-sm uppercase tracking-wider text-slate-400 mb-3">Contato</h5>
+                        <ul class="flex flex-col gap-2 text-sm text-slate-500">
+                            <li>
+                                <a href="https://github.com/renanduart3/venda-mobile-inteligente" target="_blank" rel="noopener" class="hover:text-primary transition-colors">
+                                    GitHub
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
             </div>
-            <p class="footer-note">
-                &copy; 2024-2026 Venda Mobile Inteligente. Todos os direitos reservados.
-            </p>
-            <p class="footer-note">
-                Desenvolvido com ❤️ para facilitar suas vendas mobile
-            </p>
+            <div class="pt-8 mt-8 border-t border-slate-200 dark:border-slate-800 text-center text-xs text-slate-400">
+                <p>© 2026 Loja Inteligente. Todos os direitos reservados. · <a href="privacy-policy.html" class="hover:text-primary transition-colors">Privacidade</a> · <a href="terms-of-service.html" class="hover:text-primary transition-colors">Termos</a></p>
+            </div>
         </div>
     </footer>
 </body>

@@ -3,166 +3,244 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Termos de Serviço - Venda Mobile Inteligente">
-    <title>Termos de Serviço - Venda Mobile Inteligente</title>
-    <link rel="stylesheet" href="assets/css/site.css">
+    <meta name="description" content="Termos de Serviço - Loja Inteligente">
+    <title>Termos de Serviço - Loja Inteligente</title>
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#14532d",
+                        "background-light": "#f6f6f8",
+                        "background-dark": "#101622",
+                    },
+                    fontFamily: { "display": ["Inter", "sans-serif"] },
+                },
+            },
+        }
+    </script>
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+        .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
+    </style>
 </head>
-<body data-theme="light">
-    <div class="container container--narrow">
-        <header class="site-header site-header--compact">
-            <a href="index.html" class="back-link">← Voltar para Home</a>
-            <h1 class="hero-title">📋 Termos de Serviço</h1>
-        </header>
+<body class="bg-background-light text-slate-900 font-display">
 
-        <div class="surface surface--narrow animate-fade-in">
-            <p class="update-date">Última atualização: 31 de outubro de 2024</p>
+    <!-- Navigation -->
+    <nav class="sticky top-0 z-50 w-full bg-white/80 backdrop-blur-md border-b border-primary/10">
+        <div class="max-w-4xl mx-auto px-4 h-16 flex items-center justify-between">
+            <a href="index.html" class="flex items-center gap-2 hover:opacity-80 transition-opacity">
+                <span class="material-symbols-outlined text-primary text-2xl">arrow_back</span>
+                <span class="text-sm font-semibold text-slate-600">Voltar para Home</span>
+            </a>
+            <div class="flex items-center gap-2">
+                <span class="material-symbols-outlined text-primary text-2xl">shopping_cart</span>
+                <span class="text-base font-black tracking-tight text-primary">Loja Inteligente</span>
+            </div>
+        </div>
+    </nav>
 
-            <p>
-                Bem-vindo ao Venda Mobile Inteligente. Ao utilizar nosso aplicativo, você concorda com os
+    <main class="max-w-4xl mx-auto px-4 py-12">
+
+        <!-- Header -->
+        <div class="mb-10 flex flex-col gap-3">
+            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 text-primary text-xs font-bold uppercase tracking-wider w-fit">
+                <span class="material-symbols-outlined text-sm">gavel</span> Legal
+            </div>
+            <h1 class="text-4xl font-black tracking-tight text-slate-900">Termos de Serviço</h1>
+            <p class="text-sm text-slate-500">Última atualização: 10 de março de 2026</p>
+        </div>
+
+        <!-- Content Card -->
+        <div class="bg-white rounded-2xl border border-slate-100 shadow-sm p-8 md:p-12 flex flex-col gap-8">
+
+            <p class="text-slate-600 leading-relaxed">
+                Bem-vindo ao <strong>Loja Inteligente</strong>. Ao utilizar nosso aplicativo, você concorda com os
                 seguintes termos e condições. Por favor, leia-os cuidadosamente.
             </p>
 
-            <h2 class="section-title mt-0">1. Aceitação dos Termos</h2>
-            <p>
-                Ao acessar e usar o aplicativo Venda Mobile Inteligente ("Aplicativo"), você aceita e concorda
-                em ficar vinculado aos termos e condições deste Acordo. Se você não concordar com qualquer
-                parte destes termos, não deverá usar o Aplicativo.
-            </p>
-
-            <h2 class="section-title">2. Descrição do Serviço</h2>
-            <p>
-                O Venda Mobile Inteligente é um aplicativo mobile desenvolvido para facilitar o gerenciamento
-                de vendas, clientes, produtos e relatórios para profissionais e empresas. O serviço pode incluir:
-            </p>
-            <ul>
-                <li>Registro e acompanhamento de vendas</li>
-                <li>Cadastro e gestão de clientes</li>
-                <li>Controle de catálogo de produtos</li>
-                <li>Geração de relatórios e estatísticas</li>
-                <li>Sincronização de dados</li>
-            </ul>
-
-            <h2 class="section-title">3. Registro e Conta de Usuário</h2>
-            <h3 class="text-secondary">3.1 Criação de Conta</h3>
-            <p>
-                Para utilizar determinadas funcionalidades do Aplicativo, você pode precisar criar uma conta.
-                Você concorda em fornecer informações precisas, atuais e completas durante o processo de
-                registro.
-            </p>
-
-            <h3 class="text-secondary">3.2 Segurança da Conta</h3>
-            <p>
-                Você é responsável por manter a confidencialidade de suas credenciais de acesso e por todas
-                as atividades que ocorrem em sua conta. Notifique-nos imediatamente sobre qualquer uso não
-                autorizado de sua conta.
-            </p>
-
-            <h2 class="section-title">4. Uso Aceitável</h2>
-            <p>Você concorda em usar o Aplicativo apenas para fins legais e de acordo com estes Termos. Você não deve:</p>
-            <ul>
-                <li>Usar o Aplicativo de qualquer maneira que viole leis ou regulamentos aplicáveis</li>
-                <li>Transmitir material ilegal, prejudicial, ameaçador, abusivo ou de qualquer outra forma censurável</li>
-                <li>Tentar obter acesso não autorizado a qualquer parte do Aplicativo</li>
-                <li>Interferir ou interromper o funcionamento do Aplicativo</li>
-                <li>Usar o Aplicativo para enviar spam ou conteúdo promocional não solicitado</li>
-                <li>Reproduzir, duplicar, copiar ou revender qualquer parte do Aplicativo sem permissão</li>
-            </ul>
-
-            <h2 class="section-title">5. Propriedade Intelectual</h2>
-            <p>
-                Todo o conteúdo, recursos e funcionalidades do Aplicativo, incluindo mas não se limitando a
-                textos, gráficos, logotipos, ícones, imagens, clipes de áudio, downloads digitais e compilações
-                de dados, são de propriedade exclusiva do desenvolvedor e são protegidos por leis de direitos
-                autorais, marcas registradas e outras leis de propriedade intelectual.
-            </p>
-
-            <h2 class="section-title">6. Dados do Usuário</h2>
-            <h3 class="text-secondary">6.1 Seus Dados</h3>
-            <p>
-                Você retém todos os direitos sobre os dados que você insere no Aplicativo (informações de 
-                clientes, produtos, vendas, etc.). Concedemos a você o direito de acessar, modificar e 
-                excluir seus dados a qualquer momento.
-            </p>
-
-            <h3 class="text-secondary">6.2 Backup de Dados</h3>
-            <p>
-                Embora façamos esforços razoáveis para manter a segurança e integridade dos dados, recomendamos 
-                que você mantenha backups regulares de suas informações importantes.
-            </p>
-
-            <h2 class="section-title">7. Limitação de Responsabilidade</h2>
-            <div class="important">
-                <p>
-                    <strong>IMPORTANTE:</strong> O Aplicativo é fornecido "como está" e "conforme disponível", 
-                    sem garantias de qualquer tipo, expressas ou implícitas. Não garantimos que o Aplicativo 
-                    estará disponível ininterruptamente ou livre de erros.
+            <!-- Section 1 -->
+            <div class="flex flex-col gap-3">
+                <h2 class="text-xl font-bold text-primary border-b border-primary/10 pb-2">1. Aceitação dos Termos</h2>
+                <p class="text-slate-600 leading-relaxed">
+                    Ao acessar e usar o aplicativo <strong>Loja Inteligente</strong> ("Aplicativo"), você aceita e concorda
+                    em ficar vinculado aos termos e condições deste Acordo. Se você não concordar com qualquer
+                    parte destes termos, não deverá usar o Aplicativo.
                 </p>
             </div>
-            <p>
-                Em nenhuma circunstância seremos responsáveis por quaisquer danos diretos, indiretos, 
-                incidentais, especiais, consequenciais ou punitivos, incluindo, mas não se limitando a, 
-                perda de lucros, dados, uso, boa vontade ou outras perdas intangíveis.
-            </p>
 
-            <h2 class="section-title">8. Modificações do Serviço</h2>
-            <p>
-                Reservamo-nos o direito de modificar ou descontinuar, temporária ou permanentemente, o 
-                Aplicativo (ou qualquer parte dele) com ou sem aviso prévio. Não seremos responsáveis 
-                perante você ou terceiros por qualquer modificação, suspensão ou descontinuação do Aplicativo.
-            </p>
-
-            <h2 class="section-title">9. Rescisão</h2>
-            <p>
-                Podemos rescindir ou suspender seu acesso ao Aplicativo imediatamente, sem aviso prévio ou 
-                responsabilidade, por qualquer motivo, incluindo, sem limitação, se você violar estes Termos.
-            </p>
-            <p>
-                Você pode encerrar sua conta a qualquer momento, deixando de usar o Aplicativo e solicitando 
-                a exclusão de sua conta através dos canais de suporte apropriados.
-            </p>
-
-            <h2 class="section-title">10. Alterações nos Termos</h2>
-            <p>
-                Reservamo-nos o direito de modificar estes Termos a qualquer momento. Notificaremos você sobre 
-                quaisquer alterações publicando os novos Termos nesta página e atualizando a data de "Última 
-                atualização" no topo.
-            </p>
-            <p>
-                Seu uso continuado do Aplicativo após tais modificações constitui sua aceitação dos novos Termos.
-            </p>
-
-            <h2 class="section-title">11. Lei Aplicável</h2>
-            <p>
-                Estes Termos serão regidos e interpretados de acordo com as leis do Brasil, sem considerar 
-                suas disposições sobre conflito de leis.
-            </p>
-
-            <h2 class="section-title">12. Contato</h2>
-            <p>
-                Se você tiver dúvidas sobre estes Termos, entre em contato conosco através do GitHub:
-                <a href="https://github.com/renanduart3/venda-mobile-inteligente" target="_blank">
-                    github.com/renanduart3/venda-mobile-inteligente
-                </a>
-            </p>
-
-            <div class="important">
-                <p>
-                    <strong>Aceitação:</strong> Ao usar o Venda Mobile Inteligente, você confirma que leu, 
-                    compreendeu e concorda em estar vinculado a estes Termos de Serviço.
+            <!-- Section 2 -->
+            <div class="flex flex-col gap-3">
+                <h2 class="text-xl font-bold text-primary border-b border-primary/10 pb-2">2. Descrição do Serviço</h2>
+                <p class="text-slate-600 leading-relaxed">
+                    O Loja Inteligente é um aplicativo mobile desenvolvido para facilitar o gerenciamento
+                    de vendas, clientes, produtos e relatórios para autônomos e pequenos empreendedores. O serviço pode incluir:
                 </p>
+                <ul class="list-disc list-inside text-slate-600 space-y-1 pl-2">
+                    <li>Registro e acompanhamento de vendas</li>
+                    <li>Cadastro e gestão de clientes</li>
+                    <li>Controle de catálogo de produtos e estoque</li>
+                    <li>Geração de relatórios e estatísticas</li>
+                    <li>Compartilhamento de recibos via WhatsApp</li>
+                    <li>Funcionamento offline com sincronização</li>
+                </ul>
+            </div>
+
+            <!-- Section 3 -->
+            <div class="flex flex-col gap-3">
+                <h2 class="text-xl font-bold text-primary border-b border-primary/10 pb-2">3. Registro e Conta de Usuário</h2>
+                <h3 class="font-semibold text-slate-800">3.1 Criação de Conta</h3>
+                <p class="text-slate-600 leading-relaxed">
+                    Para utilizar determinadas funcionalidades do Aplicativo, você pode precisar criar uma conta.
+                    Você concorda em fornecer informações precisas, atuais e completas durante o processo de registro.
+                </p>
+                <h3 class="font-semibold text-slate-800">3.2 Segurança da Conta</h3>
+                <p class="text-slate-600 leading-relaxed">
+                    Você é responsável por manter a confidencialidade de suas credenciais de acesso e por todas
+                    as atividades que ocorrem em sua conta. Notifique-nos imediatamente sobre qualquer uso não
+                    autorizado de sua conta.
+                </p>
+            </div>
+
+            <!-- Section 4 -->
+            <div class="flex flex-col gap-3">
+                <h2 class="text-xl font-bold text-primary border-b border-primary/10 pb-2">4. Uso Aceitável</h2>
+                <p class="text-slate-600 leading-relaxed">Você concorda em usar o Aplicativo apenas para fins legais e de acordo com estes Termos. Você não deve:</p>
+                <ul class="list-disc list-inside text-slate-600 space-y-1 pl-2">
+                    <li>Usar o Aplicativo de qualquer maneira que viole leis ou regulamentos aplicáveis</li>
+                    <li>Transmitir material ilegal, prejudicial, ameaçador ou abusivo</li>
+                    <li>Tentar obter acesso não autorizado a qualquer parte do Aplicativo</li>
+                    <li>Interferir ou interromper o funcionamento do Aplicativo</li>
+                    <li>Usar o Aplicativo para enviar spam ou conteúdo promocional não solicitado</li>
+                    <li>Reproduzir, duplicar, copiar ou revender qualquer parte do Aplicativo sem permissão</li>
+                </ul>
+            </div>
+
+            <!-- Section 5 -->
+            <div class="flex flex-col gap-3">
+                <h2 class="text-xl font-bold text-primary border-b border-primary/10 pb-2">5. Propriedade Intelectual</h2>
+                <p class="text-slate-600 leading-relaxed">
+                    Todo o conteúdo, recursos e funcionalidades do Aplicativo, incluindo textos, gráficos, logotipos,
+                    ícones, imagens e compilações de dados, são de propriedade exclusiva do desenvolvedor e são
+                    protegidos por leis de direitos autorais, marcas registradas e outras leis de propriedade intelectual.
+                </p>
+            </div>
+
+            <!-- Section 6 -->
+            <div class="flex flex-col gap-3">
+                <h2 class="text-xl font-bold text-primary border-b border-primary/10 pb-2">6. Dados do Usuário</h2>
+                <h3 class="font-semibold text-slate-800">6.1 Seus Dados</h3>
+                <p class="text-slate-600 leading-relaxed">
+                    Você retém todos os direitos sobre os dados que você insere no Aplicativo (informações de
+                    clientes, produtos, vendas, etc.). Concedemos a você o direito de acessar, modificar e
+                    excluir seus dados a qualquer momento.
+                </p>
+                <h3 class="font-semibold text-slate-800">6.2 Backup de Dados</h3>
+                <p class="text-slate-600 leading-relaxed">
+                    Embora façamos esforços razoáveis para manter a segurança e integridade dos dados, recomendamos
+                    que você mantenha backups regulares de suas informações importantes.
+                </p>
+            </div>
+
+            <!-- Section 7 -->
+            <div class="flex flex-col gap-3">
+                <h2 class="text-xl font-bold text-primary border-b border-primary/10 pb-2">7. Limitação de Responsabilidade</h2>
+                <div class="rounded-xl bg-amber-50 border border-amber-200 p-4 text-amber-800 text-sm leading-relaxed">
+                    <strong>IMPORTANTE:</strong> O Aplicativo é fornecido "como está" e "conforme disponível",
+                    sem garantias de qualquer tipo, expressas ou implícitas. Não garantimos que o Aplicativo
+                    estará disponível ininterruptamente ou livre de erros.
+                </div>
+                <p class="text-slate-600 leading-relaxed">
+                    Em nenhuma circunstância seremos responsáveis por quaisquer danos diretos, indiretos,
+                    incidentais, especiais, consequenciais ou punitivos, incluindo, mas não se limitando a,
+                    perda de lucros, dados, uso, boa vontade ou outras perdas intangíveis.
+                </p>
+            </div>
+
+            <!-- Section 8 -->
+            <div class="flex flex-col gap-3">
+                <h2 class="text-xl font-bold text-primary border-b border-primary/10 pb-2">8. Modificações do Serviço</h2>
+                <p class="text-slate-600 leading-relaxed">
+                    Reservamo-nos o direito de modificar ou descontinuar, temporária ou permanentemente, o
+                    Aplicativo (ou qualquer parte dele) com ou sem aviso prévio. Não seremos responsáveis
+                    perante você ou terceiros por qualquer modificação, suspensão ou descontinuação do Aplicativo.
+                </p>
+            </div>
+
+            <!-- Section 9 -->
+            <div class="flex flex-col gap-3">
+                <h2 class="text-xl font-bold text-primary border-b border-primary/10 pb-2">9. Rescisão</h2>
+                <p class="text-slate-600 leading-relaxed">
+                    Podemos rescindir ou suspender seu acesso ao Aplicativo imediatamente, sem aviso prévio ou
+                    responsabilidade, por qualquer motivo, incluindo, sem limitação, se você violar estes Termos.
+                </p>
+                <p class="text-slate-600 leading-relaxed">
+                    Você pode encerrar sua conta a qualquer momento, deixando de usar o Aplicativo e solicitando
+                    a exclusão de sua conta através dos canais de suporte disponíveis no GitHub.
+                </p>
+            </div>
+
+            <!-- Section 10 -->
+            <div class="flex flex-col gap-3">
+                <h2 class="text-xl font-bold text-primary border-b border-primary/10 pb-2">10. Alterações nos Termos</h2>
+                <p class="text-slate-600 leading-relaxed">
+                    Reservamo-nos o direito de modificar estes Termos a qualquer momento. Notificaremos você sobre
+                    quaisquer alterações publicando os novos Termos nesta página e atualizando a data de "Última
+                    atualização" no topo.
+                </p>
+                <p class="text-slate-600 leading-relaxed">
+                    Seu uso continuado do Aplicativo após tais modificações constitui sua aceitação dos novos Termos.
+                </p>
+            </div>
+
+            <!-- Section 11 -->
+            <div class="flex flex-col gap-3">
+                <h2 class="text-xl font-bold text-primary border-b border-primary/10 pb-2">11. Lei Aplicável</h2>
+                <p class="text-slate-600 leading-relaxed">
+                    Estes Termos serão regidos e interpretados de acordo com as leis do Brasil, incluindo a
+                    Lei Geral de Proteção de Dados (LGPD — Lei nº 13.709/2018), sem considerar suas disposições
+                    sobre conflito de leis.
+                </p>
+            </div>
+
+            <!-- Section 12 -->
+            <div class="flex flex-col gap-3">
+                <h2 class="text-xl font-bold text-primary border-b border-primary/10 pb-2">12. Contato</h2>
+                <p class="text-slate-600 leading-relaxed">Se você tiver dúvidas sobre estes Termos, entre em contato pelo GitHub:</p>
+                <div class="rounded-xl bg-slate-50 border border-slate-200 p-4 flex flex-col gap-1 text-sm text-slate-700">
+                    <p><strong>Repositório:</strong> <a href="https://github.com/renanduart3/venda-mobile-inteligente" target="_blank" rel="noopener" class="text-primary hover:underline">github.com/renanduart3/venda-mobile-inteligente</a></p>
+                    <p><strong>Issues / Suporte:</strong> <a href="https://github.com/renanduart3/venda-mobile-inteligente/issues" target="_blank" rel="noopener" class="text-primary hover:underline">Abrir uma Issue no GitHub</a></p>
+                </div>
+            </div>
+
+            <!-- Acceptance Box -->
+            <div class="rounded-xl bg-primary/5 border border-primary/20 p-5 text-sm text-slate-700 leading-relaxed">
+                <strong>Aceitação:</strong> Ao usar o Loja Inteligente, você confirma que leu,
+                compreendeu e concorda em estar vinculado a estes Termos de Serviço.
+            </div>
+
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-white border-t border-slate-200 py-10 mt-12">
+        <div class="max-w-4xl mx-auto px-4 flex flex-col md:flex-row justify-between items-center gap-6">
+            <div class="flex items-center gap-2">
+                <span class="material-symbols-outlined text-primary text-xl">shopping_cart</span>
+                <span class="font-black tracking-tight text-primary">Loja Inteligente</span>
+            </div>
+            <div class="flex flex-wrap gap-6 text-sm text-slate-500 justify-center">
+                <a href="index.html" class="hover:text-primary transition-colors">Home</a>
+                <a href="privacy-policy.html" class="hover:text-primary transition-colors">Política de Privacidade</a>
+                <a href="https://github.com/renanduart3/venda-mobile-inteligente" target="_blank" rel="noopener" class="hover:text-primary transition-colors">GitHub</a>
             </div>
         </div>
+        <p class="text-center text-xs text-slate-400 mt-6">© 2026 Loja Inteligente. Todos os direitos reservados.</p>
+    </footer>
 
-        <footer>
-            <div class="links-section footer-links">
-                <a href="index.html">Home</a>
-                <a href="privacy-policy.html">Política de Privacidade</a>
-                <a href="https://github.com/renanduart3/venda-mobile-inteligente">GitHub</a>
-            </div>
-            <p class="footer-note">
-                &copy; 2024 Venda Mobile Inteligente. Todos os direitos reservados.
-            </p>
-        </footer>
-    </div>
 </body>
 </html>
