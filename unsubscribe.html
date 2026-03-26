@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Exclusão de Conta - Loja Inteligente">
+    <title>Exclusão de Conta - Loja Inteligente</title>
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#14532d",
+                        "background-light": "#f6f6f8",
+                        "background-dark": "#101622",
+                    },
+                    fontFamily: { "display": ["Inter", "sans-serif"] },
+                },
+            },
+        }
+    </script>
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+        .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
+    </style>
+</head>
+<body class="bg-background-light text-slate-900 font-display">
+
+    <!-- Navigation -->
+    <nav class="sticky top-0 z-50 w-full bg-white/80 backdrop-blur-md border-b border-primary/10">
+        <div class="max-w-4xl mx-auto px-4 h-16 flex items-center justify-between">
+            <a href="index.html" class="flex items-center gap-2 hover:opacity-80 transition-opacity">
+                <span class="material-symbols-outlined text-primary text-2xl">arrow_back</span>
+                <span class="text-sm font-semibold text-slate-600">Voltar para Home</span>
+            </a>
+            <div class="flex items-center gap-2">
+                <span class="material-symbols-outlined text-primary text-2xl">shopping_cart</span>
+                <span class="text-base font-black tracking-tight text-primary">Loja Inteligente</span>
+            </div>
+        </div>
+    </nav>
+
+    <main class="max-w-4xl mx-auto px-4 py-12">
+
+        <!-- Header -->
+        <div class="mb-10 flex flex-col gap-3">
+            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-red-100 text-red-700 text-xs font-bold uppercase tracking-wider w-fit">
+                <span class="material-symbols-outlined text-sm">delete</span> Exclusão de Conta
+            </div>
+            <h1 class="text-4xl font-black tracking-tight text-slate-900">Excluir Minha Conta</h1>
+        </div>
+
+        <!-- Content Card -->
+        <div class="bg-white rounded-2xl border border-slate-100 shadow-sm p-8 md:p-12 flex flex-col gap-8">
+
+            <!-- Info box -->
+            <div class="rounded-xl bg-red-50 border border-red-200 p-5 text-sm text-slate-700 leading-relaxed">
+                Para excluir sua conta e todos os dados associados, preencha o formulário abaixo.
+                Processaremos sua solicitação em até <strong>7 dias úteis</strong>.
+            </div>
+
+            <!-- CTA -->
+            <div class="flex flex-col items-center gap-4 py-4">
+                <a
+                    href="https://docs.google.com/forms/d/e/1FAIpQLSdpSF9-U9Z842CY4Ayx777w4ojSTl2xpDjm7v2yw92uqugPBg/viewform"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="inline-flex items-center gap-3 px-8 py-4 rounded-xl bg-red-600 hover:bg-red-700 active:bg-red-800 text-white font-bold text-base transition-colors shadow-sm"
+                >
+                    <span class="material-symbols-outlined text-xl">open_in_new</span>
+                    Abrir Formulário de Exclusão
+                </a>
+                <p class="text-xs text-slate-400 text-center">O formulário será aberto em uma nova aba.</p>
+            </div>
+
+            <!-- What happens section -->
+            <div class="flex flex-col gap-3">
+                <h2 class="text-xl font-bold text-primary border-b border-primary/10 pb-2">O que acontece após a solicitação?</h2>
+                <ul class="flex flex-col gap-3 text-sm text-slate-600">
+                    <li class="flex items-start gap-3">
+                        <span class="material-symbols-outlined text-primary mt-0.5 text-base">check_circle</span>
+                        <span>Recebemos sua solicitação e iniciamos o processo de exclusão.</span>
+                    </li>
+                    <li class="flex items-start gap-3">
+                        <span class="material-symbols-outlined text-primary mt-0.5 text-base">check_circle</span>
+                        <span>Todos os seus dados pessoais, histórico de vendas e informações da conta serão removidos dos nossos sistemas.</span>
+                    </li>
+                    <li class="flex items-start gap-3">
+                        <span class="material-symbols-outlined text-primary mt-0.5 text-base">check_circle</span>
+                        <span>O processo será concluído em até <strong>7 dias úteis</strong> a partir da data da solicitação.</span>
+                    </li>
+                    <li class="flex items-start gap-3">
+                        <span class="material-symbols-outlined text-amber-500 mt-0.5 text-base">warning</span>
+                        <span>Esta ação é irreversível. Após a exclusão, não será possível recuperar os dados.</span>
+                    </li>
+                </ul>
+            </div>
+
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-white border-t border-slate-200 py-10 mt-12">
+        <div class="max-w-4xl mx-auto px-4 flex flex-col md:flex-row justify-between items-center gap-6">
+            <div class="flex items-center gap-2">
+                <span class="material-symbols-outlined text-primary text-xl">shopping_cart</span>
+                <span class="font-black tracking-tight text-primary">Loja Inteligente</span>
+            </div>
+            <div class="flex flex-wrap gap-6 text-sm text-slate-500 justify-center">
+                <a href="index.html" class="hover:text-primary transition-colors">Home</a>
+                <a href="privacy-policy.html" class="hover:text-primary transition-colors">Política de Privacidade</a>
+                <a href="terms-of-service.html" class="hover:text-primary transition-colors">Termos de Serviço</a>
+                <a href="https://github.com/renanduart3/venda-mobile-inteligente" target="_blank" rel="noopener" class="hover:text-primary transition-colors">GitHub</a>
+            </div>
+        </div>
+        <p class="text-center text-xs text-slate-400 mt-6">© 2026 Loja Inteligente. Todos os direitos reservados.</p>
+    </footer>
+
+</body>
+</html>
